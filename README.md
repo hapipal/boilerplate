@@ -1,10 +1,10 @@
 boilerplate-api
 ===
 
-- Clone this repo: `git clone git@github.com:yarn-co/boilerplate-api.git .`
+- Clone this repo: `git clone git@github.com:devinivy/boilerplate-api.git .`
 - Create a new repo on github, `new-api`.
-- Change origin to point to your new API: `git remote set-url origin git@github.com:yarn-co/new-api.git`
-- Replace references to "boilerplate" (`grep -rIn --color boilerplate *`), add model, and get developing.  See [this commit](https://github.com/yarn-co/trixel-api/commit/0ae36d17d24b37021feab75d2c52d544e350bb57).
+- Change origin to point to your new API: `git remote set-url origin git@github.com:your-username/new-api.git`
+- Replace references to "boilerplate" (`grep -rIni --color boilerplate *`), add model, and get developing.
 
 Using [dogwater](https://www.npmjs.org/package/dogwater) for ORM
  - Place each model as a separate file in lib/models
