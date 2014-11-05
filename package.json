@@ -1,0 +1,35 @@
+{
+  "name": "boilerplate-api",
+  "version": "0.0.0",
+  "description": "Boilerplate's API",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "make test-cov"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/devinivy/boilerplate-api"
+  },
+  "author": "Devin Ivy <devin@bigroomstudios.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/devinivy/boilerplate-api/issues"
+  },
+  "homepage": "https://github.com/devinivy/boilerplate-api",
+  "dependencies": {
+    "hapi": "~7.x.x",
+    "boom": "~2.6.x",
+    "poop": "~1.2.x",
+    "hoek": "~2.4.x",
+    "joi": "~4.7.x",
+    "bassmaster": "~1.6.x",
+    "bedwetter": "~1.x.x",
+    "dogwater": "~0.4.x",
+    "hapi-swagger": "~0.4.x",
+    "sails-disk": "git://github.com/devinivy/sails-disk.git#master"
+  },
+  "devDependencies": {
+    "lab": "4.x.x" 
+  }
+}
