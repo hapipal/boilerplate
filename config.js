@@ -1,18 +1,18 @@
 var Path = require('path');
 
 module.exports = {
-    
+
     product: {
         name: 'boilerplate-api'
     },
-    
+
     server: {
         boilerplateApi: {
-            host: 'localhost',
-            port: 3004 // choose a new one
+            host: '0.0.0.0',
+            port: process.env.PORT || 3000
         }
     },
-    
+
     dogwater: {
         connections: {
             diskDb: {
@@ -28,10 +28,9 @@ module.exports = {
             pattern: 'fixtures.js'
         }
     },
-    
+
     poop: {
         logPath: Path.join(__dirname, 'poop.log')
     }
-    
-}
 
+};
