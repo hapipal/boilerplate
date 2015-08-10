@@ -14,6 +14,6 @@ Using [bedwetter](https://www.npmjs.org/package/bedwetter) for API building
 
 Using [bassmaster](https://www.npmjs.org/package/bassmaster) for batch requests
 
-Also included: lab for a test suite, poop for uncaught errors, hoek for utils and assertions, joi for payload validation, boom for standard HTTP errors, hapi-swagger for API documentation, my fork of sails-disk as a stand-in database.
+Also included: lab for a test suite, poop for uncaught errors, hoek for utils and assertions, joi for payload validation, boom for standard HTTP errors, hapi-swagger for API documentation, and sails-disk as a stand-in persistent database.
 
-Check-out bell and hapi-auth-cookie for authentication.
+Check-out bell and hapi-auth-jwt2 for authentication.
