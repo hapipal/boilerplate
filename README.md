@@ -8,7 +8,7 @@ boilerplate-api
 
 Using [dogwater](https://www.npmjs.org/package/dogwater) for ORM
  - Place each model as a separate file in lib/models
- - Place fixtures as perscribed by dogwater in lib/fixtures.js
+ - Place fixtures as prescribed by dogwater in lib/fixtures.js
 
 Using [bedwetter](https://www.npmjs.org/package/bedwetter) for API building
 
