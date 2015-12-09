@@ -1,6 +1,6 @@
 {
   "name": "boilerplate-api",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Boilerplate API",
   "main": "lib/index.js",
   "scripts": {
@@ -18,16 +18,18 @@
   },
   "homepage": "https://github.com/devinivy/boilerplate-api",
   "dependencies": {
-    "hapi": "8.x.x",
-    "glue": "2.x.x",
-    "boom": "2.8.x",
-    "poop": "1.2.x",
-    "hoek": "2.x.x",
-    "joi": "6.x.x",
     "bassmaster": "1.8.x",
     "bedwetter": "1.x.x",
+    "boom": "2.8.x",
     "dogwater": "0.4.x",
-    "hapi-swagger": "0.8.x",
+    "glue": "2.x.x",
+    "hapi": "11.1.x",
+    "hapi-swagger": "2.2.x",
+    "hoek": "2.x.x",
+    "inert": "3.x.x",
+    "joi": "6.x.x",
+    "poop": "1.2.x",
+    "vision": "4.x.x",
     "sails-disk": "0.10.x"
   },
   "devDependencies": {
