@@ -41,8 +41,10 @@ const manifest = {
         },
         {
             plugin: {
-                register: '../lib',
-                options: [{ select: 'boilerplate-api' }]
+                register: '../lib'
+            },
+            options: {
+                select: 'boilerplate-api'
             }
         }
     ]
@@ -62,7 +64,7 @@ if (!module.parent) {
         server.start( (err) => {
 
             if (err) {
-                throw(err);
+                throw (err);
             }
             console.log(`Boilerplate API Started at ${Config.server.boilerplateApi.uri}`);
         });
