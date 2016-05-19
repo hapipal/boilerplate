@@ -31,11 +31,15 @@ const manifest = {
             plugin: {
                 register: './dogwater',
                 options: Config.dogwater
-            },
+            }
+        },
+        {
             plugin: {
                 register: './poop',
                 options: Config.poop
-            },
+            }
+        },
+        {
             plugin: {
                 register: '../lib',
                 options: [{ select: 'boilerplate-api' }]
