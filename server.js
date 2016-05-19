@@ -62,7 +62,7 @@ if (!module.parent) {
         server.start( (err) => {
 
             if (err) {
-                console.log(err);
+                throw(err);
             }
             console.log(`Boilerplate API Started at ${Config.server.boilerplateApi.uri}`);
         });

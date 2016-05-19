@@ -33,8 +33,8 @@
     "sails-disk": "0.10.x"
   },
   "devDependencies": {
-      "eslint-config-hapi": "^9.1.0",
-      "eslint-plugin-hapi": "^4.0.0",
-      "lab": "^10.6.0"
+    "eslint-config-hapi": "^9.1.0",
+    "eslint-plugin-hapi": "^4.0.0",
+    "lab": "^10.6.0"
   }
 }
