@@ -1,6 +1,6 @@
 {
   "name": "boilerplate-api",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Boilerplate API",
   "main": "lib/index.js",
   "scripts": {
@@ -22,7 +22,7 @@
     "bedwetter": "1.x.x",
     "boom": "2.8.x",
     "dogwater": "0.4.x",
-    "glue": "2.x.x",
+    "glue": "^3.2.0",
     "hapi": "11.1.x",
     "hapi-swagger": "2.2.x",
     "hoek": "2.x.x",
@@ -33,6 +33,8 @@
     "sails-disk": "0.10.x"
   },
   "devDependencies": {
-    "lab": "5.x.x"
+    "eslint-config-hapi": "^9.1.0",
+    "eslint-plugin-hapi": "^4.0.0",
+    "lab": "^10.6.0"
   }
 }

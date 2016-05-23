@@ -1,14 +1,14 @@
-var Path = require('path');
-var Hapi = require('hapi');
-var Glue = require('glue');
-var Config = require('./config');
+'use strict';
 
+const Path = require('path');
+const Glue = require('glue');
+const Config = require('./config');
 
-Config.server.boilerplateApi.uri = (Config.server.boilerplateApi.tls ? 'https://' : 'http://') +
-                                    Config.server.boilerplateApi.host + ':' +
-                                    Config.server.boilerplateApi.port;
+const uriPrefix = (Config.server.boilerplateApi.tls ? 'https://' : 'http://');
 
-var manifest = {
+Config.server.boilerplateApi.uri =  `${uriPrefix}${Config.server.boilerplateApi.host}:${Config.server.boilerplateApi.port}`;
+
+const manifest = {
 
     server: {
         app: {
@@ -26,17 +26,28 @@ var manifest = {
             }
         }
     ],
-
-    plugins: {
-
-        // General porpoise
-        './dogwater':   Config.dogwater,
-        './poop':       Config.poop,
-
-        // Server-specific
-        '../lib': [{ select: 'boilerplate-api' }]
-
-    }
+    registrations: [
+        {
+            plugin: {
+                register: './dogwater',
+                options: Config.dogwater
+            }
+        },
+        {
+            plugin: {
+                register: './poop',
+                options: Config.poop
+            }
+        },
+        {
+            plugin: {
+                register: '../lib'
+            },
+            options: {
+                select: 'boilerplate-api'
+            }
+        }
+    ]
 
 };
 
@@ -44,16 +55,19 @@ module.exports = manifest;
 
 // If this is being required, return the manifest.  Otherwise, start the server.
 if (!module.parent) {
-    Glue.compose(manifest, { relativeTo: Path.join(__dirname, 'node_modules') }, function (err, server) {
+
+    Glue.compose(manifest, { relativeTo: Path.join(__dirname, 'node_modules') }, (err, server) => {
 
         if (err) {
-
             throw err;
         }
+        server.start( (err) => {
 
-        server.start(function () {
-
-            console.log('Started on ' + Config.server.boilerplateApi.uri);
+            if (err) {
+                throw (err);
+            }
+            console.log(`Boilerplate API Started at ${Config.server.boilerplateApi.uri}`);
         });
     });
+
 }
