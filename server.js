@@ -4,10 +4,6 @@ const Path = require('path');
 const Glue = require('glue');
 const Config = require('./config');
 
-const uriPrefix = (Config.server.boilerplateApi.tls ? 'https://' : 'http://');
-
-Config.server.boilerplateApi.uri =  `${uriPrefix}${Config.server.boilerplateApi.host}:${Config.server.boilerplateApi.port}`;
-
 const manifest = {
 
     server: {
@@ -66,7 +62,7 @@ if (!module.parent) {
             if (err) {
                 throw (err);
             }
-            console.log(`Boilerplate API Started at ${Config.server.boilerplateApi.uri}`);
+            console.log(`Boilerplate API Started at ${server.info.uri}`);
         });
     });
 

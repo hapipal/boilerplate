@@ -35,6 +35,7 @@
   "devDependencies": {
     "eslint-config-hapi": "^9.1.0",
     "eslint-plugin-hapi": "^4.0.0",
-    "lab": "^10.6.0"
+    "lab": "^10.6.0",
+    "code": "^3.0.0"
   }
 }
