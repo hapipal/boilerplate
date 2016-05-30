@@ -25,12 +25,14 @@
     "glue": "^3.2.0",
     "hapi": "11.1.x",
     "hapi-swagger": "2.2.x",
+    "haute-couture": "git+https://github.com/WilliamSWoodruff/haute-couture.git#promise-support",
     "hoek": "2.x.x",
     "inert": "3.x.x",
     "joi": "7.x.x",
+    "loveboat": "^1.2.1",
     "poop": "1.2.x",
-    "vision": "4.x.x",
-    "sails-disk": "0.10.x"
+    "sails-disk": "0.10.x",
+    "vision": "4.x.x"
   },
   "devDependencies": {
     "eslint-config-hapi": "^9.1.0",
