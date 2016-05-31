@@ -4,7 +4,7 @@
   "description": "Boilerplate API",
   "main": "lib/index.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node server",
     "test": "lab -a code -L"
   },
   "repository": {
@@ -22,20 +22,21 @@
     "bedwetter": "1.x.x",
     "boom": "2.8.x",
     "dogwater": "0.4.x",
-    "glue": "^3.2.0",
+    "glue": "3.x.x",
     "hapi": "11.1.x",
     "hapi-swagger": "2.2.x",
-    "hoek": "2.x.x",
+    "hoek": "4.x.x",
     "inert": "3.x.x",
     "joi": "7.x.x",
-    "poop": "1.2.x",
-    "vision": "4.x.x",
-    "sails-disk": "0.10.x"
+    "labbable": "1.x.x",
+    "poop": "1.x.x",
+    "sails-disk": "0.10.x",
+    "vision": "4.x.x"
   },
   "devDependencies": {
-    "eslint-config-hapi": "^9.1.0",
-    "eslint-plugin-hapi": "^4.0.0",
-    "lab": "^10.6.0",
-    "code": "^3.0.0"
+    "code": "3.x.x",
+    "eslint-config-hapi": "9.x.x",
+    "eslint-plugin-hapi": "4.x.x",
+    "lab": "10.x.x"
   }
 }
