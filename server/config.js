@@ -24,15 +24,15 @@ module.exports = {
         adapters: {
             disk: require('sails-disk')
         },
-        models: Path.normalize(__dirname + '/lib/models'),
+        models: Path.normalize(`${__dirname}/../lib/models`),
         data: {
-            dir: Path.normalize(__dirname + '/lib'),
+            dir: Path.normalize(`${__dirname}/../lib`),
             pattern: 'fixtures.js'
         }
     },
 
     poop: {
-        logPath: Path.join(__dirname, 'poop.log')
+        logPath: Path.normalize(`${__dirname}/../poop.log`)
     }
 
 };
