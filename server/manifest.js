@@ -45,6 +45,17 @@ module.exports = {
         },
         {
             plugin: {
+                // Tag routes with "api" for use with swagger.
+                register: 'hapi-swagger',
+                options: {
+                    //basePath: server.info.uri,
+                    apiVersion: 1,
+                    enableDocumentationPage: false
+                }
+            }
+        },
+        {
+            plugin: {
                 register: '../lib'
             },
             options: {
