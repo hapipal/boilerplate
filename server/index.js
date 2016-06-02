@@ -29,7 +29,5 @@ Glue.compose(Manifest, { relativeTo: __dirname }, (err, server) => {
 
             console.log(`Boilerplate API Started at ${server.info.uri}`);
         });
-
-
     });
 });
