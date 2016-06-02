@@ -45,7 +45,7 @@ module.exports = {
         },
         {
             plugin: {
-                register: './boilerplate_swagger'
+                register: './boilerplate-swagger'
             }
         },
         {
