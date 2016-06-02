@@ -13,14 +13,15 @@ module.exports = {
 
     connections: [
         {
-            host: Config.server.boilerplateApi.host,
-            port: Config.server.boilerplateApi.port,
-            labels: 'boilerplate-api',
+            host: Config.server.host,
+            port: Config.server.port,
+            labels: 'api',
             routes: {
                 cors: true
             }
         }
     ],
+
     registrations: [
         {
             plugin: {
@@ -39,21 +40,20 @@ module.exports = {
                 register: 'bassmaster',
                 options: {
                     batchEndpoint: '/',
-                    tags: ['bassmaster']
+                    tags: ['bassmaster', 'batch']
                 }
             }
         },
         {
-            plugin: {
-                register: './boilerplate-swagger'
-            }
+            plugin: './boilerplate-swagger'
+        },
+        {
+            plugin: './pinger'
         },
         {
             plugin: {
-                register: '../lib'
-            },
-            options: {
-                select: 'boilerplate-api'
+                register: '../lib',
+                options: {}
             }
         }
     ]
