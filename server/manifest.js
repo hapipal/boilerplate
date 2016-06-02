@@ -36,6 +36,20 @@ module.exports = {
         },
         {
             plugin: {
+                register: 'bassmaster',
+                options: {
+                    batchEndpoint: '/',
+                    tags: ['bassmaster']
+                }
+            }
+        },
+        {
+            plugin: {
+                register: './boilerplate-swagger'
+            }
+        },
+        {
+            plugin: {
                 register: '../lib'
             },
             options: {
