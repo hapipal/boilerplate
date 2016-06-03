@@ -3,7 +3,7 @@
 const Config = require('./config');
 
 // Glue manifest
-module.exports = {
+const manifest = module.exports = {
 
     server: {
         app: {
@@ -57,8 +57,8 @@ module.exports = {
 
 };
 
-if ( process.env.NODE_ENV === 'dev' ) {
-    module.exports.server.debug = {
+if (process.env.NODE_ENV === 'dev') {
+    manifest.server.debug = {
         log: ['error', 'implementation', 'internal'],
         request: ['error', 'implementation', 'internal']
     };
