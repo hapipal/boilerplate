@@ -60,7 +60,7 @@ module.exports = {
 
 };
 
-if( process.env.NODE_ENV == 'dev' ){
+if ( process.env.NODE_ENV === 'dev' ) {
     module.exports.server.debug = {
         log: ['error', 'implementation', 'internal'],
         request: ['error', 'implementation', 'internal']
