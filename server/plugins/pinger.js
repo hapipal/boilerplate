@@ -1,6 +1,6 @@
 'use strict';
 
-const Package = require('../package.json');
+const Package = require('../../package.json');
 
 module.exports = (server, options, next) => {
 
@@ -25,5 +25,5 @@ module.exports = (server, options, next) => {
 };
 
 module.exports.attributes = {
-    name: 'pinger'
+    name: 'app-pinger'
 };

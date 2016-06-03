@@ -15,10 +15,7 @@ module.exports = {
         {
             host: Config.server.host,
             port: Config.server.port,
-            labels: 'api',
-            routes: {
-                cors: true
-            }
+            labels: 'api'
         }
     ],
 
@@ -45,10 +42,10 @@ module.exports = {
             }
         },
         {
-            plugin: './boilerplate-swagger'
+            plugin: './plugins/swagger'
         },
         {
-            plugin: './pinger'
+            plugin: './plugins/pinger'
         },
         {
             plugin: {
