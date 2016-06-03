@@ -24,15 +24,26 @@ module.exports = {
         adapters: {
             disk: require('sails-disk')
         },
-        models: Path.normalize(__dirname + '/lib/models'),
+        models: Path.normalize(`${__dirname}/../lib/models`),
         data: {
-            dir: Path.normalize(__dirname + '/lib'),
+            dir: Path.normalize(`${__dirname}/../lib`),
             pattern: 'fixtures.js'
         }
     },
 
+    bedwetter: {
+        actAsUser: true,
+        userIdProperty: 'user.id',
+        setOwner: false,
+        requireOwner: false,
+        userUrlPrefix: '/user',
+        userModel: 'users',
+        ownerAttr: 'owner',
+        childOwnerAttr: 'owner'
+    },
+
     poop: {
-        logPath: Path.join(__dirname, 'poop.log')
+        logPath: Path.normalize(`${__dirname}/../poop.log`)
     }
 
 };
