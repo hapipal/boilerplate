@@ -45,6 +45,12 @@ module.exports = {
         },
         {
             plugin: {
+                register: 'bedwetter',
+                options: Config.bedwetter
+            }
+        },
+        {
+            plugin: {
                 register: './boilerplate-swagger'
             }
         },

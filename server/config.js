@@ -31,6 +31,17 @@ module.exports = {
         }
     },
 
+    bedwetter: {
+        actAsUser: true,
+        userIdProperty: 'user.id',
+        setOwner: false,
+        requireOwner: false,
+        userUrlPrefix: '/user',
+        userModel: 'users',
+        ownerAttr: 'owner',
+        childOwnerAttr: 'owner'
+    },
+
     poop: {
         logPath: Path.normalize(`${__dirname}/../poop.log`)
     }
