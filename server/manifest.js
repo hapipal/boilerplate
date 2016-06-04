@@ -51,16 +51,6 @@ module.exports = {
         },
         {
             plugin: {
-                register: 'inert'
-            }
-        },
-        {
-            plugin: {
-                register: 'vision'
-            }
-        },
-        {
-            plugin: {
                 register: './boilerplate-swagger'
             }
         },

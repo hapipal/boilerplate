@@ -25,7 +25,7 @@
     "glue": "3.x.x",
     "hapi": "11.1.x",
     "hapi-swagger": "2.2.x",
-    "haute-couture": "git+https://github.com/WilliamSWoodruff/haute-couture.git#promise-support",
+    "haute-couture": "1.x.x",
     "hoek": "4.x.x",
     "inert": "3.x.x",
     "joi": "7.x.x",
