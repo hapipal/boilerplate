@@ -1,7 +1,8 @@
 'use strict';
-const Path = require('path');
 
-exports.register = (server, serverOptions, next) => {
+const Handlebars = require('handlebars');
+
+exports.register = (server, options, next) => {
 
     server.register([
         {
@@ -14,8 +15,7 @@ exports.register = (server, serverOptions, next) => {
             // Tag routes with "api" for use with swagger.
             register: require('hapi-swagger'),
             options: {
-                apiVersion: 1,
-                enableDocumentationPage: false
+                enableDocumentation: false
             }
         }
     ],
@@ -25,11 +25,16 @@ exports.register = (server, serverOptions, next) => {
             return next(err);
         }
 
+        server.views({
+            engines: { html: Handlebars },
+            path: __dirname
+        });
+
         // Swagger docs
         server.route({
-            method: 'GET',
+            method: 'get',
             path: '/swagger',
-            handler: { file: Path.normalize(__dirname + '/swagger.html') }
+            handler: { view: { template: 'swagger' } }
         });
 
         next();
@@ -38,5 +43,5 @@ exports.register = (server, serverOptions, next) => {
 };
 
 exports.register.attributes = {
-    name : 'hapi-swagger-bundle'
+    name: 'app-swagger'
 };

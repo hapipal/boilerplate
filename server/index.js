@@ -27,7 +27,7 @@ Glue.compose(Manifest, { relativeTo: __dirname }, (err, server) => {
 
             Hoek.assert(!err, err);
 
-            console.log(`Boilerplate API Started at ${server.info.uri}`);
+            console.log(`Server started at ${server.info.uri}`);
         });
     });
 });

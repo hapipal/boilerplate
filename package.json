@@ -5,7 +5,8 @@
   "main": "lib/index.js",
   "scripts": {
     "start": "node server",
-    "test": "lab -a code -L"
+    "test": "lab -a code -L",
+    "lint": "lab -dL"
   },
   "repository": {
     "type": "git",
@@ -20,17 +21,18 @@
   "dependencies": {
     "bassmaster": "2.x.x",
     "bedwetter": "1.x.x",
-    "boom": "2.8.x",
+    "boom": "3.x.x",
     "dogwater": "0.4.x",
     "glue": "3.x.x",
-    "hapi": "11.1.x",
-    "hapi-swagger": "2.2.x",
+    "handlebars": "4.x.x",
+    "hapi": "13.x.x",
+    "hapi-swagger": "6.x.x",
     "haute-couture": "1.x.x",
     "hoek": "4.x.x",
-    "inert": "3.x.x",
-    "joi": "7.x.x",
+    "inert": "4.x.x",
+    "joi": "8.x.x",
     "labbable": "1.x.x",
-    "poop": "1.x.x",
+    "poop": "2.x.x",
     "sails-disk": "0.10.x",
     "vision": "4.x.x"
   },

@@ -3,7 +3,7 @@
 const Config = require('./config');
 
 // Glue manifest
-module.exports = {
+const manifest = module.exports = {
 
     server: {
         app: {
@@ -13,14 +13,12 @@ module.exports = {
 
     connections: [
         {
-            host: Config.server.boilerplateApi.host,
-            port: Config.server.boilerplateApi.port,
-            labels: 'boilerplate-api',
-            routes: {
-                cors: true
-            }
+            host: Config.server.host,
+            port: Config.server.port,
+            labels: 'api'
         }
     ],
+
     registrations: [
         {
             plugin: {
@@ -30,45 +28,41 @@ module.exports = {
         },
         {
             plugin: {
-                register: 'poop',
-                options: Config.poop
-            }
-        },
-        {
-            plugin: {
                 register: 'bassmaster',
                 options: {
                     batchEndpoint: '/',
-                    tags: ['bassmaster']
+                    tags: ['bassmaster', 'batch']
                 }
             }
         },
         {
-            plugin: {
-                register: 'bedwetter',
-                options: Config.bedwetter
-            }
+            plugin: './plugins/swagger'
+        },
+        {
+            plugin: './plugins/pinger'
         },
         {
             plugin: {
-                register: './boilerplate-swagger'
-            }
-        },
-        {
-            plugin: {
-                register: '../lib'
-            },
-            options: {
-                select: 'boilerplate-api'
+                register: '../lib',
+                options: Config.api
             }
         }
     ]
 
 };
 
-if ( process.env.NODE_ENV === 'dev' ) {
-    module.exports.server.debug = {
+if (process.env.NODE_ENV === 'dev') {
+    manifest.server.debug = {
         log: ['error', 'implementation', 'internal'],
         request: ['error', 'implementation', 'internal']
     };
+}
+
+if (process.env.NODE_ENV === 'production') {
+    manifest.registrations.push({
+        plugin: {
+            register: 'poop',
+            options: Config.poop
+        }
+    });
 }

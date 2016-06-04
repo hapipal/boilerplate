@@ -4,16 +4,12 @@ const Path = require('path');
 
 module.exports = {
 
-    product: {
-        name: 'boilerplate-api'
+    server: {
+        host: '0.0.0.0',
+        port: process.env.PORT || 3000
     },
 
-    server: {
-        boilerplateApi: {
-            host: '0.0.0.0',
-            port: process.env.PORT || 3000
-        }
-    },
+    api: {},
 
     dogwater: {
         connections: {
@@ -29,17 +25,6 @@ module.exports = {
             dir: Path.normalize(`${__dirname}/../lib`),
             pattern: 'fixtures.js'
         }
-    },
-
-    bedwetter: {
-        actAsUser: true,
-        userIdProperty: 'user.id',
-        setOwner: false,
-        requireOwner: false,
-        userUrlPrefix: '/user',
-        userModel: 'users',
-        ownerAttr: 'owner',
-        childOwnerAttr: 'owner'
     },
 
     poop: {
