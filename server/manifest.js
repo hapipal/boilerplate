@@ -21,8 +21,49 @@ module.exports = {
             }
         }
     ],
-
     registrations: [
+        {
+            plugin: {
+                register: 'dogwater',
+                options: Config.dogwater
+            }
+        },
+        {
+            plugin: {
+                register: 'poop',
+                options: Config.poop
+            }
+        },
+        {
+            plugin: {
+                register: 'bassmaster',
+                options: {
+                    batchEndpoint: '/',
+                    tags: ['bassmaster']
+                }
+            }
+        },
+        {
+            plugin: {
+                register: 'bedwetter',
+                options: Config.bedwetter
+            }
+        },
+        {
+            plugin: {
+                register: 'inert'
+            }
+        },
+        {
+            plugin: {
+                register: 'vision'
+            }
+        },
+        {
+            plugin: {
+                register: './boilerplate-swagger'
+            }
+        },
         {
             plugin: {
                 register: '../lib'
@@ -32,6 +73,7 @@ module.exports = {
             }
         }
     ]
+
 };
 
 if ( process.env.NODE_ENV === 'dev' ) {
