@@ -32,6 +32,7 @@
     "inert": "4.x.x",
     "joi": "8.x.x",
     "labbable": "1.x.x",
+    "loveboat": "1.x.x",
     "poop": "2.x.x",
     "sails-disk": "0.10.x",
     "vision": "4.x.x"
