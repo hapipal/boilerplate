@@ -17,7 +17,7 @@ $ git clone git@github.com:devinivy/boilerplate-api.git .
 Now install the dependencies and start running the server:
 
 ```bash
-$ npm i
+$ npm install
 $ npm start
 ```
 
