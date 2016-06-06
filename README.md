@@ -37,23 +37,21 @@ $ git remote set-url origin git@github.com:your-username/my-project.git
 $ git push
 ```
 
-
-
 ## Tools :ocean:
 Here are a list of tools we include in the project.
 
 Name | Usage
 ------------ | -------------
 [dogwater](https://github.com/devinivy/dogwater) | Integrates the Waterline ORM  
-[bassmaster](https://github.com/hapijs/bassmaster) | Batch request plugin for hapi
-[lab](https://github.com/hapijs/lab) | Node.js test framework
-[poop](https://github.com/hapijs/poop) | hapi plugin for handling uncaught exceptions
+[sails-disk](https://github.com/balderdashy/sails-disk) | A local disk adapter for Waterline ORM
 [hoek](https://github.com/hapijs/hoek) | Node utilities shared amongst the extended hapi universe
 [joi](https://github.com/hapijs/joi) | Object schema validation
+[bassmaster](https://github.com/hapijs/bassmaster) | Batch request plugin for hapi
+[poop](https://github.com/hapijs/poop) | hapi plugin for handling uncaught exceptions
 [boom](https://github.com/hapijs/boom) | HTTP-friendly error objects
 [hapi-swagger](https://github.com/glennjones/hapi-swagger) | A Swagger interface for hapi
-[sails-disk](https://github.com/balderdashy/sails-disk) | A local disk adapter for Waterline ORM
+[lab](https://github.com/hapijs/lab) | Node.js test framework
 
 ## My First Route
 
-Here is some text about this
+More to come
