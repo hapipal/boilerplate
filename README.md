@@ -1,36 +1,52 @@
-Boilerplate API
+hapi API Boilerplate
 ===
-A hapi boilerplate that makes creating APIs easy
+A general purpose boilerplate for building APIs with hapi
 
 ## Getting Started
-- Clone this repo: `git clone git@github.com:devinivy/boilerplate-api.git .`
-- Create a new repo on github, `new-api`.
-- Change origin to point to your new API: `git remote set-url origin git@github.com:your-username/new-api.git`
-- Replace references to "boilerplate" (`grep -rIni --color boilerplate *`), add model, and get developing.
+Create a new directory; in this example our project is called `my-project`:
 
-## Tools
-Here are a list of tools we include in the project
+```bash
+$ mkdir my-project
+$ cd my-project/
+$ git clone git@github.com:devinivy/boilerplate-api.git .
+$ npm i
+```
 
-### Dogwater
-A hapi plugin that integrates the Waterline ORM | [Learn More](https://github.com/devinivy/dogwater)
+Now start running the server with `npm start`:
 
- - Place each model as a separate file in lib/models
- - Place fixtures as prescribed by dogwater in lib/fixtures.js
+```bash
+$ npm start
+$ > boilerplate-api@0.3.0 start /Users/maxfelker/boilerplate-api
+$ > node server
+$ Server started at http://0.0.0.0:3000
+```
 
-### Bedwetter
-A hapi plugin that auto-generates RESTful CRUDdy route handlers | [Learn More](https://github.com/devinivy/bedwetter)
+#### Push to your :octocat: repo
 
-### bassmaster
-A hapi plugin that handles batch requests | [Learn More](https://www.npmjs.org/package/bassmaster)
+First, create your repo - we are using `my-project`. Once that is done, set the project's origin and push up the code:
 
-### Other tools
-This project also contains:
- - lab for a test suite
- - poop for uncaught errors
- - hoek for utils and assertions   
- - joi for payload validation
- - boom for standard HTTP errors
- - hapi-swagger for API documentation
- - sails-disk as a stand-in persistent database.
+```bash
+$ git remote set-url origin git@github.com:your-username/my-project.git
+$ git push
+```
 
-Check-out bell and hapi-auth-jwt2 for authentication.
+:potable_water: hapi boiling!
+
+## Tools :ocean:
+Here are a list of tools we include in the project.
+
+Name | Usage
+------------ | -------------
+[dogwater](https://github.com/devinivy/dogwater) | integrates the Waterline ORM  
+[bassmaster](https://www.npmjs.org/package/bassmaster) | handles batch requests
+lab | test suite
+poop | uncaught errors
+hoek | utils and assertions
+joi | payload validation
+boom | standard HTTP errors
+hapi-swagger | API documentation
+sails-disk | stand-in persistent database
+
+## My First Route
+
+Here is some text about this
