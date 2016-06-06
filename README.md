@@ -1,4 +1,4 @@
-<img src="http://i.imgur.com/rIPLQNq.jpg" />
+<img src="http://i.imgur.com/LKv5XMA.jpg" />
 
 hapi API Boilerplate
 ===
