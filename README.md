@@ -1,5 +1,7 @@
+
 hapi API Boilerplate
 ===
+<img src="http://i.imgur.com/rIPLQNq.jpg" />
 A general purpose boilerplate for building APIs with hapi
 
 ## Getting Started
