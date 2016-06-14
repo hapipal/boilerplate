@@ -20,7 +20,6 @@
   "homepage": "https://github.com/devinivy/boilerplate-api",
   "dependencies": {
     "bassmaster": "2.x.x",
-    "bedwetter": "1.x.x",
     "boom": "3.x.x",
     "dogwater": "0.4.x",
     "glue": "3.x.x",
