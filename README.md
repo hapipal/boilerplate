@@ -59,8 +59,7 @@ In this simple example, we're going show you how to setup an endpoint where we c
 We need to create a route definition for our `dogs`. We do this by creating a file in `lib/routes/dogs.js`. `haute-couture` will find your plugin and start using it the next time the server is started.
 
 Below you'll see a `GET` route that retrieves a list of `dogs`
-by using `dogwater` to integrate with `sails-disk` DB. After that, we see a `POST` route that finds an existing `dog`
-or creates one, depending if an `id` is passed in the POST payload.
+by using `dogwater` to integrate with `sails-disk` DB. After that, we see a `POST` route that creates a `dog` with the specific `type` and `name` of the `dog`.
 
 ```javascript
 'use strict';
@@ -69,6 +68,7 @@ module.exports = [
   {
     method: 'GET',
     path: '/dogs',
+    tags: ['api'],
     config: {
       handler: (request, reply) => {
         const Dogs = request.collections.dogs;
@@ -80,16 +80,14 @@ module.exports = [
     method: 'POST',
     path: '/dogs',
     config: {
+      tags: ['api'],
       handler: (request, reply) => {
         const Dogs = request.collections.dogs;
-        const query = {
-          id: request.payload.id
-        };
         const values = {
           type: request.payload.type,
           name: request.payload.name
         };
-        reply(Dogs.findOrCreate(query, values));
+        reply(Dogs.create(query, values));
       }
     }
   },
@@ -100,7 +98,7 @@ module.exports = [
 ### Create the Model
 
 In order for the application to store and retrieve data from the database, we need to setup a model definition for `dogs`.
-Similar to the route above, we place our model definition in `lib/models/dog.js`. This model definition is simple - we'll
+Similar to the route above, we place our model definition in `lib/models/dogs.js`. This model definition is simple - we'll
 just save the `name` and `type` of `dog` for now.
 
 ```javascript
@@ -109,8 +107,6 @@ just save the `name` and `type` of `dog` for now.
 module.exports = {
     identity: 'dogs',
     connection:'diskDb',
-    migrate: 'safe',
-    schema: true,
     attributes: {
       name: {
         type: 'string',
@@ -146,3 +142,8 @@ Now browse back to http://0.0.0.0:3000/dogs and you should get a response like t
   }
 ]
 ```
+
+### Check My Swag
+With `hapi-swagger`, it's easy to see your new routes, docs and test out what you just built:
+
+http://0.0.0.0:3000/swagger
