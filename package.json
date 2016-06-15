@@ -21,7 +21,7 @@
   "dependencies": {
     "bassmaster": "2.x.x",
     "boom": "3.x.x",
-    "dogwater": "0.4.x",
+    "dogwater": "1.x.x",
     "glue": "3.x.x",
     "handlebars": "4.x.x",
     "hapi": "13.x.x",
