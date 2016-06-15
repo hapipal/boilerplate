@@ -25,7 +25,7 @@ $ npm start
 If everything goes well you should see this :surfer:
 
 ```bash
-> boilerplate-api@0.3.0 start /Users/maxfelker/boilerplate-api
+> boilerplate-api@0.3.0 start /Users/maxfelker/my-project
 > node server
 Server started at http://0.0.0.0:3000
 ```
@@ -125,7 +125,7 @@ module.exports = {
 ```
 
 ### Test It Out!
-With both of these files in place, restart your server and browse to the `dogs` http://0.0.0.0:3000/dogs :dog: You should get back an empty array. 
+With both of these files in place, restart your server and browse to the `dogs` http://0.0.0.0:3000/dogs :dog: You should get back an empty array.
 
 Time to make a `dog`! Make a `POST` request to the `dogs` endpoint:
 
