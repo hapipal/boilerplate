@@ -1,6 +1,7 @@
 'use strict';
 
 const Path = require('path');
+const SailsDisk = require('sails-disk');
 
 module.exports = {
 
@@ -9,7 +10,9 @@ module.exports = {
         port: process.env.PORT || 3000
     },
 
-    api: {},
+    main: {
+        connection: process.env.NODE_ENV === 'dev' ? 'diskDb' : 'diskDb'
+    },
 
     dogwater: {
         connections: {
@@ -18,12 +21,7 @@ module.exports = {
             }
         },
         adapters: {
-            disk: require('sails-disk')
-        },
-        models: Path.normalize(`${__dirname}/../lib/models`),
-        data: {
-            dir: Path.normalize(`${__dirname}/../lib`),
-            pattern: 'fixtures.js'
+            disk: SailsDisk
         }
     },
 
