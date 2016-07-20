@@ -21,12 +21,12 @@
   "dependencies": {
     "bassmaster": "2.x.x",
     "boom": "3.x.x",
-    "dogwater": "0.4.x",
+    "dogwater": "2.x.x",
     "glue": "3.x.x",
     "handlebars": "4.x.x",
     "hapi": "13.x.x",
     "hapi-swagger": "6.x.x",
-    "haute-couture": "1.x.x",
+    "haute-couture": ">=1.1.0 <2",
     "hoek": "4.x.x",
     "inert": "4.x.x",
     "joi": "8.x.x",
@@ -34,7 +34,8 @@
     "loveboat": "1.x.x",
     "poop": "2.x.x",
     "sails-disk": "0.10.x",
-    "vision": "4.x.x"
+    "vision": "4.x.x",
+    "waterline": "0.12.x"
   },
   "devDependencies": {
     "code": "3.x.x",

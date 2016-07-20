@@ -1,36 +1,149 @@
-Boilerplate API
-===
-A hapi boilerplate that makes creating APIs easy
+<img src="http://i.imgur.com/LKv5XMA.jpg" />
+
+# Boilerplate API
+
+A general purpose boilerplate for building APIs with hapi
 
 ## Getting Started
-- Clone this repo: `git clone git@github.com:devinivy/boilerplate-api.git .`
-- Create a new repo on github, `new-api`.
-- Change origin to point to your new API: `git remote set-url origin git@github.com:your-username/new-api.git`
-- Replace references to "boilerplate" (`grep -rIni --color boilerplate *`), add model, and get developing.
+In this example our project is called `my-project` :droplet:
 
-## Tools
-Here are a list of tools we include in the project
+```bash
+$ curl -LOk https://github.com/devinivy/boilerplate-api/archive/master.zip
+$ unzip master.zip
+$ mv boilerplate-api-master/ my-project/
+$ cd my-project/
+```
 
-### Dogwater
-A hapi plugin that integrates the Waterline ORM | [Learn More](https://github.com/devinivy/dogwater)
+Now install the dependencies and start running the server :ocean:
 
- - Place each model as a separate file in lib/models
- - Place fixtures as prescribed by dogwater in lib/fixtures.js
+```bash
+$ npm install
+$ npm start
+```
 
-### Bedwetter
-A hapi plugin that auto-generates RESTful CRUDdy route handlers | [Learn More](https://github.com/devinivy/bedwetter)
+If everything goes well you should see this :surfer:
 
-### bassmaster
-A hapi plugin that handles batch requests | [Learn More](https://www.npmjs.org/package/bassmaster)
+```bash
+> boilerplate-api@0.3.0 start /Users/maxfelker/my-project
+> node server
+Server started at http://0.0.0.0:3000
+```
 
-### Other tools
-This project also contains:
- - lab for a test suite
- - poop for uncaught errors
- - hoek for utils and assertions   
- - joi for payload validation
- - boom for standard HTTP errors
- - hapi-swagger for API documentation
- - sails-disk as a stand-in persistent database.
+Now your app is running at [http://0.0.0.0:3000](http://0.0.0.0:3000) :potable_water: hapi boiling!
 
-Check-out bell and hapi-auth-jwt2 for authentication.
+### Tools
+Here are a list of tools we include in the project :octocat:
+
+Name | Description
+------------ | -------------
+[dogwater](https://github.com/devinivy/dogwater) | Integrates the Waterline ORM  
+[sails-disk](https://github.com/balderdashy/sails-disk) | A local disk adapter for Waterline ORM
+[haute-couture](https://github.com/devinivy/haute-couture) | File-based hapi plugin composer
+[glue](https://github.com/hapijs/glue) | Server composer for hapi.js
+[hoek](https://github.com/hapijs/hoek) | Node utilities shared amongst the extended hapi universe
+[joi](https://github.com/hapijs/joi) | Object schema validation
+[bassmaster](https://github.com/hapijs/bassmaster) | Batch request plugin for hapi
+[poop](https://github.com/hapijs/poop) | hapi plugin for handling uncaught exceptions
+[boom](https://github.com/hapijs/boom) | HTTP-friendly error objects
+[hapi-swagger](https://github.com/glennjones/hapi-swagger) | A Swagger interface for hapi
+[lab](https://github.com/hapijs/lab) | Node.js test framework
+[labbable](https://github.com/devinivy/labbable) | No-fuss hapi server testing
+
+## My First Boil
+In this simple example, we're going show you how to setup an endpoint where we can get a list of `dogs` as well as
+ create and update `dogs`.
+
+### Create the Route
+We need to create a route definition for our `dogs`. We do this by creating a file in `lib/routes/dogs.js`. `haute-couture` will find your plugin and start using it the next time the server is started.
+
+Below you'll see a `GET` route that retrieves a list of `dogs`
+by using `dogwater` to integrate with `sails-disk` DB. After that, we see a `POST` route that creates a `dog` with the specific `type` and `name` of the `dog`.
+
+```js
+'use strict';
+
+module.exports = [
+  {
+    method: 'get',
+    path: '/dogs',
+    config: {
+      tags: ['api'],
+      handler: (request, reply) => {
+
+        const Dogs = request.collections().dogs;
+
+        reply(Dogs.find());
+      }
+    }
+  },
+  {
+    method: 'post',
+    path: '/dogs',
+    config: {
+      tags: ['api'],
+      handler: (request, reply) => {
+
+        const Dogs = request.collections().dogs;
+
+        reply(Dogs.create({
+          type: request.payload.type,
+          name: request.payload.name
+        }));
+      }
+    }
+  },
+];
+```
+
+### Create the Model
+
+In order for the application to store and retrieve data from the database, we need to setup a model definition for `dogs`.
+Similar to the route above, we place our model definition in `lib/models/dogs.js`. This model definition is simple - we'll
+just save the `name` and `type` of `dog` for now.
+
+```js
+'use strict';
+
+module.exports = {
+    identity: 'dogs',
+    connection:'diskDb',
+    attributes: {
+      name: {
+        type: 'string',
+        required: true
+      },
+      type: {
+        type: 'string',
+        required: true
+      }
+    }
+};
+```
+
+### Test It Out!
+With both of these files in place, restart your server and browse to the `dogs` http://0.0.0.0:3000/dogs :dog: You should get back an empty array.
+
+Time to make a `dog`! Make a `POST` request to the `dogs` endpoint:
+
+```bash
+curl --data "name=Gus&type=Leonberger" http://0.0.0.0:3000/dogs
+```
+
+Now browse back to http://0.0.0.0:3000/dogs and you should get a response like this:
+
+```json
+[
+  {
+    "type":"Leonberger",
+    "name":"Gus",
+    "createdAt":"2016-06-15T15:11:58.477Z",
+    "updatedAt":"2016-06-15T15:11:58.477Z",
+    "id":1
+  }
+]
+```
+
+### Check My Swag
+With `hapi-swagger`, it's easy to see your new routes, docs and test out what you just built:
+
+http://0.0.0.0:3000/swagger
