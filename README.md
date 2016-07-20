@@ -53,8 +53,37 @@ Name | Description
 In this simple example, we're going show you how to setup an endpoint where we can get a list of `dogs` as well as
  create and update `dogs`.
 
+### Create the Model
+
+ In order for the application to store and retrieve data from the database, we need to setup a model definition for `dogs`.
+ We place our model definition in `lib/models/dogs.js`. This model definition is simple - we'll
+ just save the `name` and `type` of `dog` for now.
+
+ We prefer model identities to be plural (e.g. `dogs` not `dog`) and dash-case (e.g. `dog-houses` not `dogHouses` or `dog_houses`).  When possible, the filename containing a model definition should be named with the model identity, so `lib/models/dog-houses.js` will contain the `dog-houses` model definition. It should be noted that when dealing with Waterline, this means that you'll need to exercise special care when accessing models via `request.collections()` - fetching `dog-houses` requires you to type `request.collections()['dog-houses']`.
+
+ ```js
+ 'use strict';
+
+ module.exports = {
+     identity: 'dogs',
+     connection:'diskDb',
+     attributes: {
+       name: {
+         type: 'string',
+         required: true
+       },
+       type: {
+         type: 'string',
+         required: true
+       }
+     }
+ };
+ ```
+
 ### Create the Route
 We need to create a route definition for our `dogs`. We do this by creating a file in `lib/routes/dogs.js`. `haute-couture` will find your plugin and start using it the next time the server is started.
+
+We also prefer dash-casing of routes (e.g. `dogs/change-houses` not `dogs/changeHouses`) and the base of the route should be the same as the model identity (e.g. `dogs/change-houses` not `dog/change-houses`). When possible the route definitions should be in a file with the same name as the model the routes are interacting with, so `lib/routes/dog-house.js` will contain the routes for the `dog-houses` model.
 
 Below you'll see a `GET` route that retrieves a list of `dogs`
 by using `dogwater` to integrate with `sails-disk` DB. After that, we see a `POST` route that creates a `dog` with the specific `type` and `name` of the `dog`.
@@ -93,31 +122,6 @@ module.exports = [
     }
   },
 ];
-```
-
-### Create the Model
-
-In order for the application to store and retrieve data from the database, we need to setup a model definition for `dogs`.
-Similar to the route above, we place our model definition in `lib/models/dogs.js`. This model definition is simple - we'll
-just save the `name` and `type` of `dog` for now.
-
-```js
-'use strict';
-
-module.exports = {
-    identity: 'dogs',
-    connection:'diskDb',
-    attributes: {
-      name: {
-        type: 'string',
-        required: true
-      },
-      type: {
-        type: 'string',
-        required: true
-      }
-    }
-};
 ```
 
 ### Test It Out!
