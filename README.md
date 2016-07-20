@@ -53,7 +53,7 @@ Name | Description
 In this simple example, we're going show you how to setup an endpoint where we can get a list of `dogs` as well as
  create and update `dogs`.
 
- ### Create the Model
+### Create the Model
 
  In order for the application to store and retrieve data from the database, we need to setup a model definition for `dogs`.
  We place our model definition in `lib/models/dogs.js`. This model definition is simple - we'll
