@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node server",
     "test": "lab -a code -L",
-    "lint": "lab -dL"
+    "lint": "lab -dL",
+    "demo": "NODE_ENV=test npm start"
   },
   "repository": {
     "type": "git",
@@ -31,8 +32,10 @@
     "inert": "4.x.x",
     "joi": "8.x.x",
     "labbable": "1.x.x",
+    "mysql": "^2.12.0",
     "poop": "2.x.x",
     "sails-disk": "0.10.x",
+    "sqlite3": "^3.1.8",
     "vision": "4.x.x",
     "waterline": "0.12.x"
   },

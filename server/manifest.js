@@ -22,8 +22,8 @@ const manifest = module.exports = {
     registrations: [
         {
             plugin: {
-                register: 'dogwater',
-                options: Config.dogwater
+                register: 'hapiObjection',
+                options: Config.hapiObjection
             }
         },
         {
