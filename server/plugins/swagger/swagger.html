@@ -129,6 +129,14 @@
 
                 */
                   
+                window.swaggerUi.load();
+
+                function log() {
+                    if ('console' in window) {
+                        console.log.apply(console, arguments);
+                    }
+                }
+                  
                 // Autopopulate localstorage JWT
 
                 var toastElement = document.createElement('div');
@@ -198,15 +206,6 @@
                 }, 1500);
 
                 // End autopopulate code
-
-
-                window.swaggerUi.load();
-
-                function log() {
-                    if ('console' in window) {
-                        console.log.apply(console, arguments);
-                    }
-                }
             });
 
         </script>
