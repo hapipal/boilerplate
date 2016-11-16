@@ -182,7 +182,7 @@
                         var $responseCode = $loginPostLogin.find('.response_body code');
 
                         if($responseCode.length > 0) {
-                            $responseCode[0].innerText = '';
+                            $responseCode.parent()[0].removeChild($responseCode[0]);
                         }
 
                         var watchForLoginResponse = setInterval(function() {
