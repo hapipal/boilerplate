@@ -57,12 +57,3 @@ if (process.env.NODE_ENV === 'dev') {
         request: ['error', 'implementation', 'internal']
     };
 }
-
-if (process.env.NODE_ENV === 'production') {
-    manifest.registrations.push({
-        plugin: {
-            register: 'poop',
-            options: Config.poop
-        }
-    });
-}

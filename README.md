@@ -43,7 +43,6 @@ Name | Description
 [hoek](https://github.com/hapijs/hoek) | Node utilities shared amongst the extended hapi universe
 [joi](https://github.com/hapijs/joi) | Object schema validation
 [bassmaster](https://github.com/hapijs/bassmaster) | Batch request plugin for hapi
-[poop](https://github.com/hapijs/poop) | hapi plugin for handling uncaught exceptions
 [boom](https://github.com/hapijs/boom) | HTTP-friendly error objects
 [hapi-swagger](https://github.com/glennjones/hapi-swagger) | A Swagger interface for hapi
 [lab](https://github.com/hapijs/lab) | Node.js test framework
