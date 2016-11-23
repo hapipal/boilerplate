@@ -17,15 +17,15 @@ module.exports = {
     hapiObjection: {
 
         development: {
-            client: 'mysql',
+            client: 'mysql2',
             connection: {
                 host: '127.0.0.1',
                 port: 3306,
                 user: 'demo',
                 password: 'demo',
                 database: 'demo',
-            },
-            useNullAsDefault: true
+            }
+            // useNullAsDefault: true
         },
 
         production: {
