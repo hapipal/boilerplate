@@ -24,8 +24,8 @@ module.exports = {
                 user: 'demo',
                 password: 'demo',
                 database: 'demo',
-            }
-            // useNullAsDefault: true
+            },
+            useNullAsDefault: true
         },
 
         production: {
