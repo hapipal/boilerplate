@@ -15,7 +15,7 @@ exports.register = (server, options, next) => {
             // Tag routes with "api" for use with swagger.
             register: require('hapi-swagger'),
             options: {
-                enableDocumentation: false
+                documentationPage: false
             }
         }
     ],
