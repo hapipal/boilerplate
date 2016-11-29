@@ -32,7 +32,7 @@
     "inert": "4.x.x",
     "joi": "8.x.x",
     "labbable": "1.x.x",
-    "mysql": "^2.7.0",
+    "mysql": "^2.12.0",
     "mysql2": "^1.1.2",
     "objection": "^0.6.2",
     "poop": "2.x.x",
