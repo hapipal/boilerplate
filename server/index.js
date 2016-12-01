@@ -27,8 +27,6 @@ Glue.compose(Manifest, { relativeTo: __dirname }, (err, server) => {
 
             Hoek.assert(!err, err);
 
-            console.log(server.collections());
-
             console.log(`Server started at ${server.info.uri}`);
         });
     });

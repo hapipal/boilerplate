@@ -30,7 +30,7 @@
     "haute-couture": ">=1.1.0 <2",
     "hoek": "4.x.x",
     "inert": "4.x.x",
-    "joi": "8.x.x",
+    "joi": "10.x.x",
     "labbable": "1.x.x",
     "mysql": "^2.12.0",
     "mysql2": "^1.1.2",
