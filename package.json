@@ -24,7 +24,7 @@
     "dogwater": ">=2.2.0 <3",
     "glue": "4.x.x",
     "handlebars": "4.x.x",
-    "hapi": "15.x.x",
+    "hapi": "16.x.x",
     "hapi-swagger": "7.x.x",
     "haute-couture": ">=1.3.0 <2",
     "hoek": "4.x.x",
