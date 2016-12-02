@@ -31,10 +31,9 @@
     "hoek": "4.x.x",
     "inert": "4.x.x",
     "joi": "10.x.x",
-    "labbable": "1.x.x",
+    "labbable": "2.x.x",
     "mysql2": "^1.1.2",
     "objection": "^0.6.2",
-    "poop": "2.x.x",
     "sails-disk": "0.10.x",
     "vision": "4.x.x",
     "waterline": "0.12.x"
