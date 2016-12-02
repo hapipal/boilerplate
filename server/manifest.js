@@ -22,8 +22,8 @@ const manifest = module.exports = {
     registrations: [
         {
             plugin: {
-                register: 'hapiObjection',
-                options: Config.hapiObjection
+                register: 'schwifty',
+                options: Config.schwifty
             }
         },
         {

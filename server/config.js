@@ -10,7 +10,7 @@ module.exports = {
         port: process.env.PORT || 3000
     },
 
-    hapiObjection: require('./knexfile'),
+    schwifty: require('./knexfile'),
 
     poop: {
         logPath: Path.normalize(`${__dirname}/../poop.log`)

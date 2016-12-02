@@ -1,4 +1,3 @@
-// Update with your config settings.
 
 module.exports = {
 
@@ -11,7 +10,8 @@ module.exports = {
             password: 'demo',
             database: 'demo',
         },
-        useNullAsDefault: true
+        useNullAsDefault: true,
+        debug: true
     },
     production: {
         client: 'mysql',
