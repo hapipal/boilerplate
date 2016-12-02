@@ -32,12 +32,10 @@
     "inert": "4.x.x",
     "joi": "10.x.x",
     "labbable": "1.x.x",
-    "mysql": "^2.12.0",
     "mysql2": "^1.1.2",
     "objection": "^0.6.2",
     "poop": "2.x.x",
     "sails-disk": "0.10.x",
-    "sqlite3": "^3.1.8",
     "vision": "4.x.x",
     "waterline": "0.12.x"
   },
@@ -45,6 +43,7 @@
     "code": "3.x.x",
     "eslint-config-hapi": "9.x.x",
     "eslint-plugin-hapi": "4.x.x",
-    "lab": "10.x.x"
+    "lab": "10.x.x",
+    "sqlite3": "^3.1.8"
   }
 }
