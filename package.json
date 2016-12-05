@@ -4,7 +4,7 @@
   "description": "Boilerplate API",
   "main": "lib/index.js",
   "scripts": {
-    "start": "node server",
+    "start": "NODE_ENV=development node server",
     "test": "lab -a code -L",
     "lint": "lab -dL",
     "demo": "NODE_ENV=test npm start"
@@ -32,6 +32,7 @@
     "inert": "4.x.x",
     "joi": "10.x.x",
     "labbable": "2.x.x",
+    "mysql": "^2.12.0",
     "mysql2": "^1.1.2",
     "objection": "^0.6.2",
     "sails-disk": "0.10.x",
