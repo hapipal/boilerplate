@@ -10,7 +10,7 @@ module.exports = {
         port: process.env.PORT || 3000
     },
 
-    schwifty: { knexFile: require('./knexfile'), dir: __dirname },
+    schwifty: { knexFile: require('./knexfile'), dir: __dirname + '/../lib' },
 
     poop: {
         logPath: Path.normalize(`${__dirname}/../poop.log`)
