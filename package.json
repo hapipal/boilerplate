@@ -24,7 +24,6 @@
     "boom": "3.x.x",
     "dogwater": "2.x.x",
     "glue": "3.x.x",
-    "handlebars": "4.x.x",
     "hapi": "13.x.x",
     "hapi-swagger": "6.x.x",
     "haute-couture": ">=1.1.0 <2",
@@ -43,6 +42,7 @@
     "code": "3.x.x",
     "eslint-config-hapi": "9.x.x",
     "eslint-plugin-hapi": "4.x.x",
+    "handlebars": "^4.0.6",
     "lab": "10.x.x",
     "sqlite3": "^3.1.8"
   }
