@@ -128,8 +128,7 @@
                 $('#input_apiKey').val(apiKey);
 
                 */
-
-
+                  
                 window.swaggerUi.load();
 
                 function log() {
@@ -137,6 +136,76 @@
                         console.log.apply(console, arguments);
                     }
                 }
+                  
+                // Autopopulate localstorage JWT
+
+                var toastElement = document.createElement('div');
+                toastElement.style.position = 'fixed';
+                toastElement.style.top = '0';
+                toastElement.style.fontWeight = 'bold';
+                toastElement.style.width = '80%';
+                toastElement.style.left = '50%';
+                toastElement.style.transform = 'translate(-50%, 0)';
+                toastElement.style.backgroundColor = 'rgba(255,255,255,0.95)';
+                toastElement.style.padding = '20px';
+                toastElement.style.border = '1px solid black';
+                toastElement.style.zIndex = '100';
+                toastElement.style.fontFamily = 'Verdana';
+
+                function showToast(withText) {
+                    toastElement.innerHTML = withText;
+                    document.body.appendChild(toastElement);
+                    $(toastElement).slideDown();
+
+                    setTimeout(function() {
+                        $(toastElement).slideUp();
+                    }, 2500);
+                }
+
+                setTimeout(function() {
+
+                    function populateAuthElements() {
+                        var savedJwt = localStorage.getItem('swagger-jwt');
+                        if(savedJwt !== null) {
+                            Array.prototype.slice.call($('[name="authorization"]')).forEach(function(authField) {
+                                $(authField).val(savedJwt);
+                            });
+                        }
+                    }
+
+                    var $loginPostLogin = $('#login_postLogin');
+
+                    $loginPostLogin.find('.submit').wrap('<div class="login-submit-wrapper"></div>');
+
+                    $('.login-submit-wrapper').click(function() {
+
+                        var $responseCode = $loginPostLogin.find('.response_body code');
+
+                        if($responseCode.length > 0) {
+                            $responseCode.parent()[0].removeChild($responseCode[0]);
+                        }
+
+                        var watchForLoginResponse = setInterval(function() {
+                            var $responseCode = $loginPostLogin.find('.response_body code');
+                            if($responseCode.length > 0) {
+                                clearInterval(watchForLoginResponse);
+
+                                var textContent = $responseCode[0].textContent;
+                                if(textContent.indexOf('error') === -1) {
+                                    localStorage.setItem('swagger-jwt', textContent);
+                                    showToast('Updated Swagger localstorage JWT!');
+                                    populateAuthElements();
+                                } else {
+                                    showToast('Did not save JWT, try again');
+                                }
+                            }
+                        }, 1000);
+                    });
+
+                    populateAuthElements();
+                }, 1500);
+
+                // End autopopulate code
             });
 
         </script>
