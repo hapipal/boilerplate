@@ -4,6 +4,7 @@
 
 const Lab = require('lab');
 const Code = require('code');
+const Package = require('../package.json');
 const LabbableServer = require('../server');
 
 // Test shortcuts
@@ -14,7 +15,7 @@ const describe = lab.describe;
 const it = lab.it;
 const expect = Code.expect;
 
-describe('Boilerplate API server', () => {
+describe('Deployment server', () => {
 
     let server;
 
@@ -32,9 +33,10 @@ describe('Boilerplate API server', () => {
         });
     });
 
-    it('has the main API plugin registered.', (done) => {
+    it('has the main plugin registered.', (done) => {
 
-        expect(server.registrations['boilerplate-api']).to.exist();
+        expect(server.registrations[Package.name]).to.exist();
+
         done();
     });
 });

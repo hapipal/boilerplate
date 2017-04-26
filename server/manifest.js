@@ -1,59 +1,35 @@
 'use strict';
 
-const Config = require('./config');
+const Dotenv = require('dotenv');
+const Hoek = require('hoek');
+const Confidence = require('confidence');
 
-// Glue manifest
-const manifest = module.exports = {
+// Pull .env into process.env
+Dotenv.config({ path: `${__dirname}/.env` });
 
+// Glue manifest as a confidence store
+module.exports = new Confidence.Store({
     server: {
-        app: {
-            config: Config
+        debug: {
+            $filter: 'NODE_ENV',
+            development: {
+                log: ['error', 'implementation', 'internal'],
+                request: ['error', 'implementation', 'internal']
+            }
         }
     },
-
     connections: [
         {
-            host: Config.server.host,
-            port: Config.server.port,
-            labels: 'api'
+            host: '0.0.0.0',
+            port: Hoek.reach(process.env, 'PORT', { default: 3000 })
         }
     ],
-
     registrations: [
         {
             plugin: {
-                register: 'dogwater',
-                options: Config.dogwater
-            }
-        },
-        {
-            plugin: {
-                register: 'bassmaster',
-                options: {
-                    batchEndpoint: '/',
-                    tags: ['bassmaster', 'batch']
-                }
-            }
-        },
-        {
-            plugin: './plugins/swagger'
-        },
-        {
-            plugin: './plugins/pinger'
-        },
-        {
-            plugin: {
-                register: '../lib',
-                options: Config.main
+                register: '../lib', // Main plugin
+                options: {}
             }
         }
     ]
-
-};
-
-if (process.env.NODE_ENV === 'dev') {
-    manifest.server.debug = {
-        log: ['error', 'implementation', 'internal'],
-        request: ['error', 'implementation', 'internal']
-    };
-}
+});

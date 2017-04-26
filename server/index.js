@@ -6,8 +6,9 @@ const Labbable = require('labbable');
 const Manifest = require('./manifest');
 
 const labbable = module.exports = new Labbable();
+const manifest = Manifest.get('/', process.env);
 
-Glue.compose(Manifest, { relativeTo: __dirname }, (err, server) => {
+Glue.compose(manifest, { relativeTo: __dirname }, (err, server) => {
 
     Hoek.assert(!err, err);
 

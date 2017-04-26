@@ -1,44 +1,28 @@
 {
-  "name": "boilerplate-api",
+  "name": "hapi-pal",
   "version": "0.3.0",
-  "description": "Boilerplate API",
   "main": "lib/index.js",
   "scripts": {
     "start": "node server",
     "test": "lab -a code -L",
     "lint": "lab -dL"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/devinivy/boilerplate-api"
-  },
-  "author": "Devin Ivy <devin@bigroomstudios.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/devinivy/boilerplate-api/issues"
-  },
-  "homepage": "https://github.com/devinivy/boilerplate-api",
   "dependencies": {
-    "bassmaster": "2.x.x",
     "boom": "4.x.x",
-    "dogwater": ">=2.2.0 <3",
-    "glue": "4.x.x",
-    "handlebars": "4.x.x",
-    "hapi": "16.x.x",
-    "hapi-swagger": "7.x.x",
-    "haute-couture": ">=1.3.0 <2",
-    "hoek": "4.x.x",
-    "inert": "4.x.x",
-    "joi": "10.x.x",
-    "labbable": "2.x.x",
-    "sails-disk": "0.10.x",
-    "vision": "4.x.x",
-    "waterline": "0.12.x"
+    "haute-couture": "2.x.x",
+    "joi": "10.x.x"
   },
   "devDependencies": {
     "code": "3.x.x",
+    "confidence": "^3.0.2",
+    "dotenv": "^4.0.0",
+    "eslint": "3.x.x",
     "eslint-config-hapi": "10.x.x",
     "eslint-plugin-hapi": "4.x.x",
-    "lab": "11.x.x"
+    "glue": "4.x.x",
+    "hapi": "16.x.x",
+    "hoek": "4.x.x",
+    "lab": "11.x.x",
+    "labbable": "2.x.x"
   }
 }
