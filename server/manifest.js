@@ -26,6 +26,9 @@ module.exports = new Confidence.Store({
     ],
     registrations: [
         {
+            plugin: './plugins/pinger'
+        },
+        {
             plugin: {
                 register: '../lib', // Main plugin
                 options: {}
