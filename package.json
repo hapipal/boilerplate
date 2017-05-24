@@ -20,6 +20,7 @@
     "eslint-config-hapi": "10.x.x",
     "eslint-plugin-hapi": "4.x.x",
     "glue": "4.x.x",
+    "handlebars": "4.x.x",
     "hapi": "16.x.x",
     "hoek": "4.x.x",
     "inert": "4.x.x",
