@@ -66,7 +66,7 @@ Integrates [hapi-swagger](https://github.com/glennjones/hapi-swagger) onto the s
 Integrates [Objection ORM](https://github.com/Vincit/objection.js) into your server and plugin using the hapi plugin [schwifty](https://github.com/BigRoomStudios/schwifty).  This is a great way to get started with a SQL-oriented plugin.  Adds a `models/` directory to your plugin where Objection models should be placed, and a `migrations/` directory where your migrations should be placed.  Configured to work with SQLite out of the box.
 
 ##### Using the knex CLI
-The knexfile lives at `server/knexfile.js`.  To avoid having to explicitly pass that location to `knex` when using the knex CLI, an npm script as been added to package.json doing just that!  To use the knex CLI, you may write your commands as `npm run knex -- <knex-command>`.
+We've added an npm script for `knex` so that you can avoid writing the whole path to the knex CLI (`node_modules/.bin/knex`) when running commands.  To use the knex CLI, you may write your commands as `npm run knex -- <knex-command>`.
 
 For example, to create a new migration,
 ```
