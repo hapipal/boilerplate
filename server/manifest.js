@@ -30,6 +30,9 @@ module.exports = new Confidence.Store({
                 register: '../lib', // Main plugin
                 options: {}
             }
+        },
+        {
+            plugin: './plugins/swagger'
         }
     ]
 });
