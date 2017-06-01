@@ -8,7 +8,7 @@ A friendly, proven starting place for your next hapi plugin or deployment
  - Textbook integrations with Objection ORM, Swagger UI, and more via [flavors](#flavors).
  - Fully setup with a [lab](https://github.com/hapijs/lab) test suite and [eslint](https://github.com/eslint/eslint) configuration.
  - Powerful, [12factor](https://12factor.net/)-oriented deployment configuration using
- [confidence](https://github.com/hapijs/confidencedot) and [dotenv](https://github.com/motdotla/dotenv).
+ [confidence](https://github.com/hapijs/confidence) and [dotenv](https://github.com/motdotla/dotenv).
  - Up-to-date versions of all dependencies.
  - Follows established hapi best practices out of the box.
  - The code is minimal and completely generic– no need to find-and-replace with your project name to get started.
