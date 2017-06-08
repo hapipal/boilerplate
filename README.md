@@ -17,7 +17,7 @@ A friendly, proven starting place for your next hapi plugin or deployment
 In this example our project is called `my-project` :droplet:
 
 ```bash
-$ git clone --depth=1 --origin=pal git@github.com:devinivy/boilerplate-api.git my-project
+$ git clone --depth=1 --origin=pal --branch=pal git@github.com:devinivy/boilerplate-api.git my-project
 $ cd my-project
 $ git checkout --orphan master # New branch without history
 $ npm install
