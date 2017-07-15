@@ -37,7 +37,7 @@ Now your app is running at [http://0.0.0.0:3000](http://0.0.0.0:3000) :potable_w
 Time for your first commit? :ocean:
 
 ```bash
-$ git remote add origin git@github.com:my-username/my-project.git
+$ git remote set-url origin git@github.com:my-username/my-project.git
 $ npm init # Rename, reversion, describe your plugin
 $ git commit -am "First commit :o)"
 ```
