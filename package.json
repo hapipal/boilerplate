@@ -22,11 +22,11 @@
     "glue": "4.x.x",
     "handlebars": "4.x.x",
     "hapi": "16.x.x",
+    "hapi-swagger": "7.x.x",
     "hoek": "4.x.x",
     "inert": "4.x.x",
     "lab": "13.x.x",
     "labbable": "2.x.x",
-    "swagger": "0.7.x",
     "vision": "4.x.x"
   }
 }

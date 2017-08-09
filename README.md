@@ -1,14 +1,23 @@
-<img src="http://i.imgur.com/LKv5XMA.jpg" />
-
 # hapi pal boilerplate
 
-A general-purpose boilerplate for a hapi plugin and deployment
+A friendly, proven starting place for your next hapi plugin or deployment
+
+**Features**
+ - Provides conventions for building plugins by mapping the entire hapi plugin API onto files and folders, using [haute-couture](https://github.com/devinivy/haute-couture).
+ - Designed to allow you to deploy your plugin on its own or as part of a larger application.
+ - Textbook integrations with Objection ORM, Swagger UI, and more via [flavors](#flavors).
+ - Fully setup with a [lab](https://github.com/hapijs/lab) test suite and [eslint](https://github.com/eslint/eslint) configuration.
+ - Powerful, [12factor](https://12factor.net/)-oriented deployment configuration using
+ [confidence](https://github.com/hapijs/confidence) and [dotenv](https://github.com/motdotla/dotenv).
+ - Up-to-date versions of all dependencies.
+ - Follows established hapi best practices out of the box.
+ - The code is minimal and completely generic– no need to find-and-replace with your project name to get started.
 
 ## Getting Started
 In this example our project is called `my-project` :droplet:
 
 ```bash
-$ git clone --depth=1 --origin=pal git@github.com:devinivy/boilerplate-api.git my-project
+$ git clone --depth=1 --origin=pal --branch=pal git@github.com:devinivy/boilerplate-api.git my-project
 $ cd my-project
 $ git checkout --orphan master # New branch without history
 $ npm install
