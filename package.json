@@ -5,16 +5,24 @@
   "scripts": {
     "start": "node server",
     "test": "lab -a code -L",
-    "lint": "lab -dL"
+    "lint": "lab -dL",
+    "prebuild:css": "node-sass lib/public/css/main.scss lib/public/css/main.build.css --source-map true",
+    "build:css": "postcss lib/public/css/main.build.css -o lib/public/css/main.build.min.css --use cssnano --no-map",
+    "build:js": "uglifyjs lib/public/js/main.js -o lib/public/js/main.build.min.js",
+    "build": "npm run build:css && npm run build:js"
   },
   "dependencies": {
     "boom": "4.x.x",
+    "handlebars": "4.x.x",
     "haute-couture": "2.x.x",
-    "joi": "10.x.x"
+    "inert": "4.x.x",
+    "joi": "10.x.x",
+    "vision": "4.x.x"
   },
   "devDependencies": {
     "code": "3.x.x",
     "confidence": "3.x.x",
+    "cssnano": "3.x.x",
     "dotenv": "4.x.x",
     "eslint": "3.x.x",
     "eslint-config-hapi": "10.x.x",
@@ -23,6 +31,8 @@
     "hapi": "16.x.x",
     "hoek": "4.x.x",
     "lab": "13.x.x",
-    "labbable": "2.x.x"
+    "labbable": "2.x.x",
+    "node-sass": "4.x.x",
+    "postcss-cli": "4.x.x"
   }
 }
