@@ -20,6 +20,7 @@
     "vision": "4.x.x"
   },
   "devDependencies": {
+    "browser-sync": "2.x.x",
     "code": "3.x.x",
     "confidence": "3.x.x",
     "cssnano": "3.x.x",
