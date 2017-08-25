@@ -60,17 +60,17 @@ git cherry-pick flavor-one flavor-two
 
 ### Available flavors
 #### Swagger
-> `git cherry-pick swagger`
+> `git cherry-pick swagger` [[view](https://github.com/devinivy/boilerplate-api/commit/swagger)]
 
 Integrates [hapi-swagger](https://github.com/glennjones/hapi-swagger) onto the server with some reasonable default configuration.
 
 #### Custom Swagger
-> `git cherry-pick custom-swagger`
+> `git cherry-pick custom-swagger` [[view](https://github.com/devinivy/boilerplate-api/commit/custom-swagger)]
 
 Integrates [hapi-swagger](https://github.com/glennjones/hapi-swagger) onto the server with some reasonable default configuration, and also includes an editable handlebars template for swagger-ui.
 
 #### Objection ORM
-> `git cherry-pick objection`
+> `git cherry-pick objection` [[view](https://github.com/devinivy/boilerplate-api/commit/objection)]
 
 Integrates [Objection ORM](https://github.com/Vincit/objection.js) into your server and plugin using the hapi plugin [schwifty](https://github.com/BigRoomStudios/schwifty).  This is a great way to get started with a SQL-oriented plugin.  Adds a `models/` directory to your plugin where Objection models should be placed, and a `migrations/` directory where your migrations should be placed.  Configured to work with SQLite out of the box.
 
@@ -83,9 +83,19 @@ npm run knex -- migrate:make my-first-migration
 ```
 
 #### Deployment
-> `git cherry-pick deployment`
+> `git cherry-pick deployment` [[view](https://github.com/devinivy/boilerplate-api/commit/deployment)]
 
 By default all deployment-oriented dependencies are placed in package.json's `devDependencies`.  This flavor pulls all the default deployment dependencies up into `dependencies`.  This is useful when you want to use pal primarily as a deployment rather than a harness to author an application plugin.  Note that the other flavors always place their deployment-oriented dependencies in `devDependencies`, and that you will have to pull those into `dependencies` separately.
+
+#### Templated Site
+> `git cherry-pick templated-site` [[view](https://github.com/devinivy/boilerplate-api/commit/templated-site)]
+
+Sets-up [handlebars](https://github.com/wycats/handlebars.js/) templating with a useful layout and openly serves the `lib/public` directory, which contains folders to place javascript and CSS.  This flavor additionally introduces three npm scripts: one to minify front-end javascript (`npm run build:js`) with [uglify](https://github.com/mishoo/UglifyJS2); one to minify CSS with [PostCSS](https://github.com/postcss/postcss)/[cssnano](https://github.com/ben-eb/cssnano) (`npm run build:css`); and one to do both (`npm run build`).  Lastly, this flavor introduces a plugin option `developmentMode` that controls whether the minified or un-minified javascript and CSS are served on the page.  The `developmentMode` is configured to be active when `NODE_ENV` is not `production`.
+
+#### Fancy Templated Site
+> `git cherry-pick fancy-templated-site` [[view](https://github.com/devinivy/boilerplate-api/commit/fancy-templated-site)]
+
+Building on top of the [templated site flavor](#templated-site), this flavor also incorporates [browserify](https://github.com/substack/node-browserify), [Sass](https://www.npmjs.com/package/node-sass), and [Browsersync](https://github.com/Browsersync/browser-sync).  As such, there are two new npm scripts: one to pre-build javascript from nodejs-style to ES5 using browserify and [Babel](https://github.com/babel/babel) (`npm run prebuild:js`); and one to pre-build CSS from SCSS using node-sass.  When `developmentMode` is active browser-sync will rebuild SCSS and nodejs-style javascript, then reload the page or stylesheets as necessary.
 
 ### Versioning
 > Note: most of the time you'll be pulling in flavors at the time you install the pal boilerplate, in which case you don't need to worry much about flavor versioning.
