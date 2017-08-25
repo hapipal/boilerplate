@@ -3,7 +3,6 @@
 // Load modules
 
 const Lab = require('lab');
-const Code = require('code');
 const Package = require('../package.json');
 const LabbableServer = require('../server');
 
@@ -13,7 +12,7 @@ const lab = exports.lab = Lab.script();
 const before = lab.before;
 const describe = lab.describe;
 const it = lab.it;
-const expect = Code.expect;
+const expect = Lab.expect;
 
 describe('Deployment server', () => {
 
@@ -37,6 +36,6 @@ describe('Deployment server', () => {
 
         expect(server.registrations[Package.name]).to.exist();
 
-        done();
+        return done();
     });
 });
