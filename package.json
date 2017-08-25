@@ -3,6 +3,7 @@
   "version": "0.3.0",
   "main": "lib/index.js",
   "scripts": {
+    "knex": "knex",
     "start": "node server",
     "test": "lab -a code -L",
     "lint": "eslint ."
@@ -10,7 +11,9 @@
   "dependencies": {
     "boom": "5.x.x",
     "haute-couture": "2.x.x",
-    "joi": "10.x.x"
+    "joi": "10.x.x",
+    "objection": "0.8.x",
+    "schwifty": "2.x.x"
   },
   "devDependencies": {
     "confidence": "3.x.x",
@@ -21,7 +24,9 @@
     "glue": "4.x.x",
     "hapi": "16.x.x",
     "hoek": "4.x.x",
+    "knex": "0.13.x",
     "lab": "14.x.x",
-    "labbable": "2.x.x"
+    "labbable": "2.x.x",
+    "sqlite3": "3.x.x"
   }
 }
