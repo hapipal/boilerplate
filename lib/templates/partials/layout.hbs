@@ -4,9 +4,9 @@
         <title>{{title}}</title>
 
         {{#if options.developmentMode}}
-            <link rel="stylesheet" href="{{baseURI}}/public/css/main.css">
+            <link rel="stylesheet" href="{{baseURI}}/public/css/main.build.css">
         {{else}}
-            <link rel="stylesheet" href="{{baseURI}}/public/css/main.min.css">
+            <link rel="stylesheet" href="{{baseURI}}/public/css/main.build.min.css">
         {{/if}}
 
         {{#> head-block}}
@@ -20,9 +20,9 @@
         {{/content}}
 
         {{#if options.developmentMode}}
-            <script src="{{baseURI}}/public/js/main.js"></script>
+            <script src="{{baseURI}}/public/js/main.build.js"></script>
         {{else}}
-            <script src="{{baseURI}}/public/js/main.min.js"></script>
+            <script src="{{baseURI}}/public/js/main.build.min.js"></script>
         {{/if}}
 
         {{#> scripts-block}}
