@@ -10,13 +10,13 @@
   "dependencies": {
     "boom": "5.x.x",
     "haute-couture": "2.x.x",
-    "joi": "10.x.x"
+    "joi": "12.x.x"
   },
   "devDependencies": {
     "confidence": "3.x.x",
     "dotenv": "4.x.x",
     "eslint": "4.x.x",
-    "eslint-config-hapi": "10.x.x",
+    "eslint-config-hapi": "11.x.x",
     "eslint-plugin-hapi": "4.x.x",
     "glue": "4.x.x",
     "hapi": "16.x.x",

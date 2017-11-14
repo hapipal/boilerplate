@@ -2,6 +2,8 @@
 
 A friendly, proven starting place for your next hapi plugin or deployment
 
+Lead Maintainer - [Devin Ivy](https://github.com/devinivy)
+
 **Features**
  - Provides conventions for building plugins by mapping the entire hapi plugin API onto files and folders, using [haute-couture](https://github.com/devinivy/haute-couture).
  - Designed to allow you to deploy your plugin on its own or as part of a larger application.
