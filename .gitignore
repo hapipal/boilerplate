@@ -1,4 +1,3 @@
 node_modules
 .tmp
 server/.env
-package-lock.json
