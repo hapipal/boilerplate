@@ -1,3 +1,6 @@
 {
-  "extends": "eslint-config-hapi"
+  "extends": "eslint-config-hapi",
+  "parserOptions": {
+      "ecmaVersion": 8
+  }
 }
