@@ -9,19 +9,14 @@ const Package = require('../package.json');
 
 // Test shortcuts
 
-const { before, describe, it } = exports.lab = Lab.script();
-const expect = Code.expect;
+const { describe, it } = exports.lab = Lab.script();
+const { expect } = Code;
 
 describe('Deployment', () => {
 
-    let server;
+    it('registers the main plugin.', async () => {
 
-    before(async () => {
-
-        server = await Server.deployment();
-    });
-
-    it('has the main plugin registered.', () => {
+        const server = await Server.deployment();
 
         expect(server.registrations[Package.name]).to.exist();
     });
