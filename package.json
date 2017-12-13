@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "boom": "5.x.x",
-    "haute-couture": "2.x.x",
+    "haute-couture": ">=2.2.0 <3",
     "joi": "12.x.x"
   },
   "devDependencies": {
