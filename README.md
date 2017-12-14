@@ -5,6 +5,7 @@ A friendly, proven starting place for your next hapi plugin or deployment
 Lead Maintainer - [Devin Ivy](https://github.com/devinivy)
 
 **Features**
+ - Supports hapi v17+
  - Provides conventions for building plugins by mapping the entire hapi plugin API onto files and folders, using [haute-couture](https://github.com/devinivy/haute-couture).
  - Designed to allow you to deploy your plugin on its own or as part of a larger application.
  - Textbook integrations with Objection ORM, Swagger UI, and more via [flavors](#flavors).
@@ -29,7 +30,7 @@ $ npm start
 If everything goes well you should see this :surfer:
 
 ```bash
-> boilerplate-api@0.3.0 start /Users/maxfelker/my-project
+> boilerplate-api@2.0.0 start /Users/maxfelker/my-project
 > node server
 Server started at http://0.0.0.0:3000
 ```
