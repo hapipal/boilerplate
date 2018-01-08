@@ -21,6 +21,9 @@
     "eslint-plugin-hapi": "4.x.x",
     "glue": "5.x.x",
     "hapi": "17.x.x",
-    "lab": "15.x.x"
+    "hapi-swagger": "9.x.x",
+    "inert": "5.x.x",
+    "lab": "15.x.x",
+    "vision": "5.x.x"
   }
 }
