@@ -24,6 +24,9 @@ module.exports = new Confidence.Store({
             {
                 plugin: '../lib', // Main plugin
                 options: {}
+            },
+            {
+                plugin: './plugins/swagger'
             }
         ]
     }
