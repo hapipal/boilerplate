@@ -2,40 +2,22 @@
 
 // Load modules
 
+const Code = require('code');
 const Lab = require('lab');
+const Server = require('../server');
 const Package = require('../package.json');
-const LabbableServer = require('../server');
 
 // Test shortcuts
 
-const lab = exports.lab = Lab.script();
-const before = lab.before;
-const describe = lab.describe;
-const it = lab.it;
-const expect = Lab.expect;
+const { describe, it } = exports.lab = Lab.script();
+const { expect } = Code;
 
-describe('Deployment server', () => {
+describe('Deployment', () => {
 
-    let server;
+    it('registers the main plugin.', async () => {
 
-    before((done) => {
-
-        LabbableServer.ready((err, srv) => {
-
-            if (err) {
-                return done(err);
-            }
-
-            server = srv;
-
-            return done();
-        });
-    });
-
-    it('has the main plugin registered.', (done) => {
+        const server = await Server.deployment();
 
         expect(server.registrations[Package.name]).to.exist();
-
-        return done();
     });
 });

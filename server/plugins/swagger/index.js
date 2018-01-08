@@ -6,27 +6,24 @@ const Handlebars = require('handlebars');
 const HapiSwagger = require('hapi-swagger');
 const Package = require('../../../package.json');
 
-exports.register = (server, options, next) => {
+module.exports = {
+    name: 'app-swagger',
+    async register(server) {
 
-    server.register([
-        Inert,
-        Vision,
-        {
-            register: HapiSwagger,
-            options: {
-                documentationPage: false,
-                validatorUrl: null,
-                info: {
-                    version: Package.version
+        await server.register([
+            Inert,
+            Vision,
+            {
+                plugin: HapiSwagger,
+                options: {
+                    documentationPage: false,
+                    validatorUrl: null,
+                    info: {
+                        version: Package.version
+                    }
                 }
             }
-        }
-    ],
-    (err) => {
-
-        if (err) {
-            return next(err);
-        }
+        ]);
 
         server.views({
             engines: { html: Handlebars },
@@ -38,11 +35,5 @@ exports.register = (server, options, next) => {
             path: '/documentation',
             handler: { view: { template: 'swagger' } }
         });
-
-        return next();
-    });
-};
-
-exports.register.attributes = {
-    name: 'app-swagger'
+    }
 };
