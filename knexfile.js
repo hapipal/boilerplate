@@ -1,18 +1,21 @@
 'use strict';
 
+const Path = require('path');
 const Hoek = require('hoek');
 const Manifest = require('./server/manifest');
+const PluginConfig = require('./lib/plugins/schwifty').plugins.options;
 
-// Take schwifty registration's knex option...
-const knexConfig = Manifest.get('/registrations', process.env)
-                           .find((r) => r.plugin.register === 'schwifty')
-                           .plugin.options.knex;
+// Take schwifty registration's knex option
+// but specify the plugin's migrations directory
 
-// ...but specify the plugin's migrations directory.
-const migrationsDirConfig = {
-    migrations: {
-        directory: './lib/migrations'
-    }
-};
-
-module.exports = Hoek.applyToDefaults(migrationsDirConfig, knexConfig);
+module.exports = Hoek.applyToDefaults(
+    {
+        migrations: {
+            directory: Path.relative(process.cwd(), PluginConfig.migrationsDir)
+        }
+    },
+    Manifest
+        .get('/register/plugins', process.env)
+        .find(({ plugin }) => plugin === 'schwifty')
+        .options.knex
+);

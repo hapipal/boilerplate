@@ -1,32 +1,32 @@
 {
   "name": "hapi-pal",
-  "version": "0.3.0",
+  "version": "2.0.0",
   "main": "lib/index.js",
   "scripts": {
     "knex": "knex",
     "start": "node server",
-    "test": "lab -a code -L",
+    "test": "lab -a code -I '__core-js_shared__' -L",
     "lint": "eslint ."
   },
   "dependencies": {
-    "boom": "5.x.x",
-    "haute-couture": "2.x.x",
-    "joi": "10.x.x",
-    "objection": "0.8.x",
-    "schwifty": "2.x.x"
+    "boom": "7.x.x",
+    "haute-couture": "3.x.x",
+    "joi": "13.x.x",
+    "objection": "0.9.x",
+    "schwifty": "3.x.x"
   },
   "devDependencies": {
+    "code": "5.x.x",
     "confidence": "3.x.x",
     "dotenv": "4.x.x",
     "eslint": "4.x.x",
-    "eslint-config-hapi": "10.x.x",
+    "eslint-config-hapi": "11.x.x",
     "eslint-plugin-hapi": "4.x.x",
-    "glue": "4.x.x",
-    "hapi": "16.x.x",
-    "hoek": "4.x.x",
-    "knex": "0.13.x",
-    "lab": "14.x.x",
-    "labbable": "2.x.x",
+    "glue": "5.x.x",
+    "hapi": "17.x.x",
+    "hoek": "5.x.x",
+    "knex": "0.14.x",
+    "lab": "15.x.x",
     "sqlite3": "3.x.x"
   }
 }

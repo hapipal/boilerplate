@@ -1,7 +1,6 @@
 'use strict';
 
 const Dotenv = require('dotenv');
-const Hoek = require('hoek');
 const Confidence = require('confidence');
 
 // Pull .env into process.env
@@ -10,6 +9,8 @@ Dotenv.config({ path: `${__dirname}/.env` });
 // Glue manifest as a confidence store
 module.exports = new Confidence.Store({
     server: {
+        host: '0.0.0.0',
+        port: process.env.PORT || 3000,
         debug: {
             $filter: 'NODE_ENV',
             development: {
@@ -18,22 +19,14 @@ module.exports = new Confidence.Store({
             }
         }
     },
-    connections: [
-        {
-            host: '0.0.0.0',
-            port: Hoek.reach(process.env, 'PORT', { default: 3000 })
-        }
-    ],
-    registrations: [
-        {
-            plugin: {
-                register: '../lib', // Main plugin
+    register: {
+        plugins: [
+            {
+                plugin: '../lib', // Main plugin
                 options: {}
-            }
-        },
-        {
-            plugin: {
-                register: 'schwifty',
+            },
+            {
+                plugin: 'schwifty',
                 options: {
                     $filter: 'NODE_ENV',
                     $default: {},
@@ -55,6 +48,6 @@ module.exports = new Confidence.Store({
                     }
                 }
             }
-        }
-    ]
+        ]
+    }
 });
