@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+    <head>
+        <title>{{title}}</title>
+
+        {{#if options.developmentMode}}
+            <link rel="stylesheet" href="{{baseURI}}/public/css/main.build.css">
+        {{else}}
+            <link rel="stylesheet" href="{{baseURI}}/public/css/main.build.min.css">
+        {{/if}}
+
+        {{#> head-block}}
+            {{!-- Custom <head> content per page could be added. --}}
+        {{/head-block}}
+    </head>
+
+    <body>
+        {{#> content}}
+            {{!-- Content goes here. --}}
+        {{/content}}
+
+        {{#if options.developmentMode}}
+            <script src="{{baseURI}}/public/js/main.build.js"></script>
+        {{else}}
+            <script src="{{baseURI}}/public/js/main.build.min.js"></script>
+        {{/if}}
+
+        {{#> scripts-block}}
+            {{!-- Custom scripts per page can be added. --}}
+        {{/scripts-block}}
+    </body>
+</html>
