@@ -1,34 +1,32 @@
 'use strict';
 
-const Hoek = require('hoek');
 const Glue = require('glue');
-const Labbable = require('labbable');
 const Manifest = require('./manifest');
 
-const labbable = module.exports = new Labbable();
-const manifest = Manifest.get('/', process.env);
+exports.deployment = async (start) => {
 
-Glue.compose(manifest, { relativeTo: __dirname }, (err, server) => {
+    const manifest = Manifest.get('/', process.env);
+    const server = await Glue.compose(manifest, { relativeTo: __dirname });
 
-    Hoek.assert(!err, err);
+    await server.initialize();
 
-    // Pass server along to labbable
-    labbable.using(server);
+    if (!start) {
+        return server;
+    }
 
-    server.initialize((err) => {
+    await server.start();
 
-        Hoek.assert(!err, err);
+    console.log(`Server started at ${server.info.uri}`);
 
-        // No need to start server if this is being required (i.e. for testing)
-        if (module.parent) {
-            return;
-        }
+    return server;
+};
 
-        server.start((err) => {
+if (!module.parent) {
 
-            Hoek.assert(!err, err);
+    exports.deployment(true);
 
-            console.log(`Server started at ${server.info.uri}`);
-        });
+    process.on('unhandledRejection', (err) => {
+
+        throw err;
     });
-});
+}
