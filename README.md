@@ -1,4 +1,4 @@
-# hapi pal boilerplate
+# the pal boilerplate
 
 A friendly, proven starting place for your next hapi plugin or deployment
 
@@ -17,32 +17,115 @@ Lead Maintainer - [Devin Ivy](https://github.com/devinivy)
  - The code is minimal and completely generic– no need to find-and-replace with your project name to get started.
 
 ## Getting Started
-In this example our project is called `my-project` :droplet:
-
-```bash
-$ git clone --depth=1 --origin=pal --branch=pal git@github.com:devinivy/boilerplate-api.git my-project
-$ cd my-project
-$ git checkout --orphan master # New branch without history
-$ npm install
-$ npm start
+```sh
+npx hpal new my-project
+cd ./my-project
+npm install
 ```
 
-If everything goes well you should see this :surfer:
+<details>
+    <summary>–
 
-```bash
-> boilerplate-api@2.0.0 start /Users/maxfelker/my-project
-> node server
-Server started at http://0.0.0.0:3000
+[npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) comes with npm 5.2+ and higher.  here you can find instructions for older npm versions.
+    </summary>
+
+With the [`hpal`](https://github.com/devinivy/hpal) CLI,
+```sh
+npm install --global hpal
+hpal new my-project
+cd ./my-project
+npm install
+```
+Going forward, any instructions that use npx can directly use your global installation of `hpal` instead.  Just replace CLI instructions that say `npx hpal` with `hpal`.
+
+Without the `hpal` CLI,
+```sh
+git clone --depth=1 --origin=pal --branch=pal git@github.com:devinivy/boilerplate-api.git my-project
+cd my-project
+git checkout --orphan master # New branch without history
+npm init
+npm install
+```
+</details>
+
+### Creating your first route
+Here we'll will pick-up where we left off (inside a new pal project folder with all dependencies installed) and create a route that serves a random quotation.
+
+```sh
+# First, consider installing hpal globally,
+npm install --global hpal
+# or locally to your project,
+npm install --save-dev hpal
+```
+```sh
+npx hpal make route random-quotation
+# Wrote lib/routes/random-quotation.js
 ```
 
-Now your app is running at [http://0.0.0.0:3000](http://0.0.0.0:3000) :potable_water: hapi boiling!
+Now open the newly-created file in your favorite text editor.  You should find something like this indicating which parts of the route configuration you need to fill-in, and the signature of a route handler.
+```js
+// lib/routes/random-quotation.js
+'use strict';
 
-Time for your first commit? :ocean:
+module.exports = {
+    method: '',
+    path: '',
+    options: {
+        handler: async (request, h) => {}
+    }
+};
+```
 
-```bash
-$ git remote add origin git@github.com:my-username/my-project.git
-$ npm init # Rename, reversion, describe your plugin
-$ git commit -am "First commit :o)"
+Let's fill-in the `method` and `path` so that the route we hit is at `get /random-quotation`, and write the `handler` to serve a random quotation from a list.  Our handler doesn't need to do anything asynchronous or use the [response toolkit](https://github.com/hapijs/hapi/blob/master/API.md#response-toolkit), so the route handler's signature appears a little simpler than before.
+
+```js
+// lib/routes/random-quotation.js
+'use strict';
+
+module.exports = {
+    method: 'get',
+    path: '/random-quotation',
+    options: {
+        handler: (request) => {
+
+            const quotations = [
+                {
+                    quotation: 'I would rather fish any day than go to heaven.',
+                    saidBy: 'Cornelia "Fly Rod" Crosby'
+                },
+                {
+                    quotation: 'I want a turkey nut yogurt cane!',
+                    saidBy: 'Stimpy'
+                },
+                {
+                    quotation: 'Streams make programming in node simple, elegant, and composable.',
+                    saidBy: 'substack'
+                }
+            ];
+
+            const randomIndex = Math.floor(Math.random() * quotations.length);
+
+            return quotations[randomIndex];
+        }
+    }
+};
+```
+
+Now start your server and try hitting it in-browser or over `curl`.
+```sh
+npm start
+# Server started at http://0.0.0.0:3000
+```
+
+```sh
+curl http://localhost:3000/random-quotation
+# {"quotation":"I would rather fish any day than go to heaven.","saidBy":"Cornelia \"Fly Rod\" Crosby"}
+```
+
+**And that's it!**  Keep in mind that if you run into anything along the way that's unfamiliar to you, you can always search the hapi API documentation using `hpal`.
+
+```sh
+npx hpal docs route.options.handler
 ```
 
 ## Flavors
@@ -52,6 +135,9 @@ hapi pal makes it easy to use the boilerplate as a jumping-off point for several
 They're simple little buggers.  We've simply tagged commits that we think will contain useful code patches depending on what direction you'd like to take your project.
 
 **Pull down the latest flavors**
+
+If you used the `hpal` CLI to create a new project then this should already be done for you.  But you can always do it manually as well– simply pull down git tags from the `pal` remote.
+
 ```sh
 git fetch pal --tags
 ```
