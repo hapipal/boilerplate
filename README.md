@@ -1,4 +1,4 @@
-# hapi pal boilerplate
+# the pal boilerplate
 
 A friendly, proven starting place for your next hapi plugin or deployment
 
@@ -6,7 +6,7 @@ Lead Maintainer - [Devin Ivy](https://github.com/devinivy)
 
 **Features**
  - Supports hapi v17+
- - Provides conventions for building plugins by mapping the entire hapi plugin API onto files and folders, using [haute-couture](https://github.com/devinivy/haute-couture).
+ - Provides conventions for building plugins by mapping the entire hapi plugin API onto files and folders, using [haute-couture](https://github.com/hapipal/haute-couture).
  - Designed to allow you to deploy your plugin on its own or as part of a larger application.
  - Textbook integrations with Objection ORM, Swagger UI, and more via [flavors](#flavors).
  - Fully setup with a [lab](https://github.com/hapijs/lab) test suite and [eslint](https://github.com/eslint/eslint) configuration.
@@ -17,32 +17,115 @@ Lead Maintainer - [Devin Ivy](https://github.com/devinivy)
  - The code is minimal and completely generic– no need to find-and-replace with your project name to get started.
 
 ## Getting Started
-In this example our project is called `my-project` :droplet:
-
-```bash
-$ git clone --depth=1 --origin=pal --branch=pal git@github.com:devinivy/boilerplate-api.git my-project
-$ cd my-project
-$ git checkout --orphan master # New branch without history
-$ npm install
-$ npm start
+```sh
+npx hpal new my-project
+cd ./my-project
+npm install
 ```
 
-If everything goes well you should see this :surfer:
+<details>
+    <summary>–
 
-```bash
-> boilerplate-api@2.0.0 start /Users/maxfelker/my-project
-> node server
-Server started at http://0.0.0.0:3000
+[npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) comes with npm 5.2+ and higher.  here you can find instructions for older npm versions.
+    </summary>
+
+With the [`hpal`](https://github.com/hapipal/hpal) CLI,
+```sh
+npm install --global hpal
+hpal new my-project
+cd ./my-project
+npm install
+```
+Going forward, any instructions that use npx can directly use your global installation of `hpal` instead.  Just replace CLI instructions that say `npx hpal` with `hpal`.
+
+Without the `hpal` CLI,
+```sh
+git clone --depth=1 --origin=pal --branch=pal git@github.com:hapipal/boilerplate.git my-project
+cd my-project
+git checkout --orphan master # New branch without history
+npm init
+npm install
+```
+</details>
+
+### Creating your first route
+Here we'll will pick-up where we left off (inside a new pal project folder with all dependencies installed) and create a route that serves a random quotation.
+
+```sh
+# First, consider installing hpal globally,
+npm install --global hpal
+# or locally to your project,
+npm install --save-dev hpal
+```
+```sh
+npx hpal make route random-quotation
+# Wrote lib/routes/random-quotation.js
 ```
 
-Now your app is running at [http://0.0.0.0:3000](http://0.0.0.0:3000) :potable_water: hapi boiling!
+Now open the newly-created file in your favorite text editor.  You should find something like this indicating which parts of the route configuration you need to fill-in, and the signature of a route handler.
+```js
+// lib/routes/random-quotation.js
+'use strict';
 
-Time for your first commit? :ocean:
+module.exports = {
+    method: '',
+    path: '',
+    options: {
+        handler: async (request, h) => {}
+    }
+};
+```
 
-```bash
-$ git remote add origin git@github.com:my-username/my-project.git
-$ npm init # Rename, reversion, describe your plugin
-$ git commit -am "First commit :o)"
+Let's fill-in the `method` and `path` so that the route we hit is at `get /random-quotation`, and write the `handler` to serve a random quotation from a list.  Our handler doesn't need to do anything asynchronous or use the [response toolkit](https://github.com/hapijs/hapi/blob/master/API.md#response-toolkit), so the route handler's signature appears a little simpler than before.
+
+```js
+// lib/routes/random-quotation.js
+'use strict';
+
+module.exports = {
+    method: 'get',
+    path: '/random-quotation',
+    options: {
+        handler: (request) => {
+
+            const quotations = [
+                {
+                    quotation: 'I would rather fish any day than go to heaven.',
+                    saidBy: 'Cornelia "Fly Rod" Crosby'
+                },
+                {
+                    quotation: 'I want a turkey nut yogurt cane!',
+                    saidBy: 'Stimpy'
+                },
+                {
+                    quotation: 'Streams make programming in node simple, elegant, and composable.',
+                    saidBy: 'substack'
+                }
+            ];
+
+            const randomIndex = Math.floor(Math.random() * quotations.length);
+
+            return quotations[randomIndex];
+        }
+    }
+};
+```
+
+Now start your server and try hitting it in-browser or over `curl`.
+```sh
+npm start
+# Server started at http://0.0.0.0:3000
+```
+
+```sh
+curl http://localhost:3000/random-quotation
+# {"quotation":"I would rather fish any day than go to heaven.","saidBy":"Cornelia \"Fly Rod\" Crosby"}
+```
+
+**And that's it!**  Keep in mind that if you run into anything along the way that's unfamiliar to you, you can always search the hapi API documentation using `hpal`.
+
+```sh
+npx hpal docs route.options.handler
 ```
 
 ## Flavors
@@ -52,6 +135,9 @@ hapi pal makes it easy to use the boilerplate as a jumping-off point for several
 They're simple little buggers.  We've simply tagged commits that we think will contain useful code patches depending on what direction you'd like to take your project.
 
 **Pull down the latest flavors**
+
+If you used the `hpal` CLI to create a new project then this should already be done for you.  But you can always do it manually as well– simply pull down git tags from the `pal` remote.
+
 ```sh
 git fetch pal --tags
 ```
@@ -63,19 +149,19 @@ git cherry-pick flavor-one flavor-two
 
 ### Available flavors
 #### Swagger
-> `git cherry-pick swagger` [[view](https://github.com/devinivy/boilerplate-api/commit/swagger)]
+> `git cherry-pick swagger` [[view](https://github.com/hapipal/boilerplate/commit/swagger)]
 
 Integrates [hapi-swagger](https://github.com/glennjones/hapi-swagger) onto the server with some reasonable default configuration.
 
 #### Custom Swagger
-> `git cherry-pick custom-swagger` [[view](https://github.com/devinivy/boilerplate-api/commit/custom-swagger)]
+> `git cherry-pick custom-swagger` [[view](https://github.com/hapipal/boilerplate/commit/custom-swagger)]
 
 Integrates [hapi-swagger](https://github.com/glennjones/hapi-swagger) onto the server with some reasonable default configuration, and also includes an editable handlebars template for swagger-ui.
 
 #### Objection ORM
-> `git cherry-pick objection` [[view](https://github.com/devinivy/boilerplate-api/commit/objection)]
+> `git cherry-pick objection` [[view](https://github.com/hapipal/boilerplate/commit/objection)]
 
-Integrates [Objection ORM](https://github.com/Vincit/objection.js) into your server and plugin using the hapi plugin [schwifty](https://github.com/BigRoomStudios/schwifty).  This is a great way to get started with a SQL-oriented plugin.  Adds a `models/` directory to your plugin where Objection models should be placed, and a `migrations/` directory where your migrations should be placed.  Configured to work with SQLite out of the box.
+Integrates [Objection ORM](https://github.com/Vincit/objection.js) into your server and plugin using the hapi plugin [schwifty](https://github.com/hapipal/schwifty).  This is a great way to get started with a SQL-oriented plugin.  Adds a `models/` directory to your plugin where Objection models should be placed, and a `migrations/` directory where your migrations should be placed.  Configured to work with SQLite out of the box.
 
 ##### Using the knex CLI
 We've added an npm script for `knex` so that you can avoid writing the whole path to the knex CLI (`node_modules/.bin/knex`) when running commands.  To use the knex CLI, you may write your commands as `npm run knex -- <knex-command>`.
@@ -86,17 +172,17 @@ npm run knex -- migrate:make my-first-migration
 ```
 
 #### Deployment
-> `git cherry-pick deployment` [[view](https://github.com/devinivy/boilerplate-api/commit/deployment)]
+> `git cherry-pick deployment` [[view](https://github.com/hapipal/boilerplate/commit/deployment)]
 
 By default all deployment-oriented dependencies are placed in package.json's `devDependencies`.  This flavor pulls all the default deployment dependencies up into `dependencies`.  This is useful when you want to use pal primarily as a deployment rather than a harness to author an application plugin.  Note that the other flavors always place their deployment-oriented dependencies in `devDependencies`, and that you will have to pull those into `dependencies` separately.
 
 #### Templated Site
-> `git cherry-pick templated-site` [[view](https://github.com/devinivy/boilerplate-api/commit/templated-site)]
+> `git cherry-pick templated-site` [[view](https://github.com/hapipal/boilerplate/commit/templated-site)]
 
 Sets-up [handlebars](https://github.com/wycats/handlebars.js/) templating with a useful layout and openly serves the `lib/public` directory, which contains folders to place javascript and CSS.  This flavor additionally introduces three npm scripts: one to minify front-end javascript (`npm run build:js`) with [uglify](https://github.com/mishoo/UglifyJS2); one to minify CSS with [PostCSS](https://github.com/postcss/postcss)/[cssnano](https://github.com/ben-eb/cssnano) (`npm run build:css`); and one to do both (`npm run build`).  Lastly, this flavor introduces a plugin option `developmentMode` that controls whether the minified or un-minified javascript and CSS are served on the page.  The `developmentMode` is configured to be active when `NODE_ENV` is not `production`.
 
 #### Fancy Templated Site
-> `git cherry-pick fancy-templated-site` [[view](https://github.com/devinivy/boilerplate-api/commit/fancy-templated-site)]
+> `git cherry-pick fancy-templated-site` [[view](https://github.com/hapipal/boilerplate/commit/fancy-templated-site)]
 
 Building on top of the [templated site flavor](#templated-site), this flavor also incorporates [browserify](https://github.com/substack/node-browserify), [Sass](https://www.npmjs.com/package/node-sass), and [Browsersync](https://github.com/Browsersync/browser-sync).  As such, there are two new npm scripts: one to pre-build javascript from nodejs-style to ES5 using browserify and [Babel](https://github.com/babel/babel) (`npm run prebuild:js`); and one to pre-build CSS from SCSS using node-sass.  When `developmentMode` is active browser-sync will rebuild SCSS and nodejs-style javascript, then reload the page or stylesheets as necessary.
 
