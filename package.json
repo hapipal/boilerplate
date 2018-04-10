@@ -1,5 +1,5 @@
 {
-  "name": "hapi-pal",
+  "name": "hapipal-boilerplate",
   "version": "2.0.0",
   "main": "lib/index.js",
   "scripts": {
@@ -15,7 +15,7 @@
   "devDependencies": {
     "code": "5.x.x",
     "confidence": "3.x.x",
-    "dotenv": "4.x.x",
+    "dotenv": "5.x.x",
     "eslint": "4.x.x",
     "eslint-config-hapi": "11.x.x",
     "eslint-plugin-hapi": "4.x.x",

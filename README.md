@@ -6,7 +6,7 @@ Lead Maintainer - [Devin Ivy](https://github.com/devinivy)
 
 **Features**
  - Supports hapi v17+
- - Provides conventions for building plugins by mapping the entire hapi plugin API onto files and folders, using [haute-couture](https://github.com/devinivy/haute-couture).
+ - Provides conventions for building plugins by mapping the entire hapi plugin API onto files and folders, using [haute-couture](https://github.com/hapipal/haute-couture).
  - Designed to allow you to deploy your plugin on its own or as part of a larger application.
  - Textbook integrations with Objection ORM, Swagger UI, and more via [flavors](#flavors).
  - Fully setup with a [lab](https://github.com/hapijs/lab) test suite and [eslint](https://github.com/eslint/eslint) configuration.
@@ -29,7 +29,7 @@ npm install
 [npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) comes with npm 5.2+ and higher.  here you can find instructions for older npm versions.
     </summary>
 
-With the [`hpal`](https://github.com/devinivy/hpal) CLI,
+With the [`hpal`](https://github.com/hapipal/hpal) CLI,
 ```sh
 npm install --global hpal
 hpal new my-project
@@ -40,7 +40,7 @@ Going forward, any instructions that use npx can directly use your global instal
 
 Without the `hpal` CLI,
 ```sh
-git clone --depth=1 --origin=pal --branch=pal git@github.com:devinivy/boilerplate-api.git my-project
+git clone --depth=1 --origin=pal --branch=pal git@github.com:hapipal/boilerplate.git my-project
 cd my-project
 git checkout --orphan master # New branch without history
 npm init
@@ -149,19 +149,19 @@ git cherry-pick flavor-one flavor-two
 
 ### Available flavors
 #### Swagger
-> `git cherry-pick swagger` [[view](https://github.com/devinivy/boilerplate-api/commit/swagger)]
+> `git cherry-pick swagger` [[view](https://github.com/hapipal/boilerplate/commit/swagger)]
 
 Integrates [hapi-swagger](https://github.com/glennjones/hapi-swagger) onto the server with some reasonable default configuration.
 
 #### Custom Swagger
-> `git cherry-pick custom-swagger` [[view](https://github.com/devinivy/boilerplate-api/commit/custom-swagger)]
+> `git cherry-pick custom-swagger` [[view](https://github.com/hapipal/boilerplate/commit/custom-swagger)]
 
 Integrates [hapi-swagger](https://github.com/glennjones/hapi-swagger) onto the server with some reasonable default configuration, and also includes an editable handlebars template for swagger-ui.
 
 #### Objection ORM
-> `git cherry-pick objection` [[view](https://github.com/devinivy/boilerplate-api/commit/objection)]
+> `git cherry-pick objection` [[view](https://github.com/hapipal/boilerplate/commit/objection)]
 
-Integrates [Objection ORM](https://github.com/Vincit/objection.js) into your server and plugin using the hapi plugin [schwifty](https://github.com/BigRoomStudios/schwifty).  This is a great way to get started with a SQL-oriented plugin.  Adds a `models/` directory to your plugin where Objection models should be placed, and a `migrations/` directory where your migrations should be placed.  Configured to work with SQLite out of the box.
+Integrates [Objection ORM](https://github.com/Vincit/objection.js) into your server and plugin using the hapi plugin [schwifty](https://github.com/hapipal/schwifty).  This is a great way to get started with a SQL-oriented plugin.  Adds a `models/` directory to your plugin where Objection models should be placed, and a `migrations/` directory where your migrations should be placed.  Configured to work with SQLite out of the box.
 
 ##### Using the knex CLI
 We've added an npm script for `knex` so that you can avoid writing the whole path to the knex CLI (`node_modules/.bin/knex`) when running commands.  To use the knex CLI, you may write your commands as `npm run knex -- <knex-command>`.
@@ -172,17 +172,17 @@ npm run knex -- migrate:make my-first-migration
 ```
 
 #### Deployment
-> `git cherry-pick deployment` [[view](https://github.com/devinivy/boilerplate-api/commit/deployment)]
+> `git cherry-pick deployment` [[view](https://github.com/hapipal/boilerplate/commit/deployment)]
 
 By default all deployment-oriented dependencies are placed in package.json's `devDependencies`.  This flavor pulls all the default deployment dependencies up into `dependencies`.  This is useful when you want to use pal primarily as a deployment rather than a harness to author an application plugin.  Note that the other flavors always place their deployment-oriented dependencies in `devDependencies`, and that you will have to pull those into `dependencies` separately.
 
 #### Templated Site
-> `git cherry-pick templated-site` [[view](https://github.com/devinivy/boilerplate-api/commit/templated-site)]
+> `git cherry-pick templated-site` [[view](https://github.com/hapipal/boilerplate/commit/templated-site)]
 
 Sets-up [handlebars](https://github.com/wycats/handlebars.js/) templating with a useful layout and openly serves the `lib/public` directory, which contains folders to place javascript and CSS.  This flavor additionally introduces three npm scripts: one to minify front-end javascript (`npm run build:js`) with [uglify](https://github.com/mishoo/UglifyJS2); one to minify CSS with [PostCSS](https://github.com/postcss/postcss)/[cssnano](https://github.com/ben-eb/cssnano) (`npm run build:css`); and one to do both (`npm run build`).  Lastly, this flavor introduces a plugin option `developmentMode` that controls whether the minified or un-minified javascript and CSS are served on the page.  The `developmentMode` is configured to be active when `NODE_ENV` is not `production`.
 
 #### Fancy Templated Site
-> `git cherry-pick fancy-templated-site` [[view](https://github.com/devinivy/boilerplate-api/commit/fancy-templated-site)]
+> `git cherry-pick fancy-templated-site` [[view](https://github.com/hapipal/boilerplate/commit/fancy-templated-site)]
 
 Building on top of the [templated site flavor](#templated-site), this flavor also incorporates [browserify](https://github.com/substack/node-browserify), [Sass](https://www.npmjs.com/package/node-sass), and [Browsersync](https://github.com/Browsersync/browser-sync).  As such, there are two new npm scripts: one to pre-build javascript from nodejs-style to ES5 using browserify and [Babel](https://github.com/babel/babel) (`npm run prebuild:js`); and one to pre-build CSS from SCSS using node-sass.  When `developmentMode` is active browser-sync will rebuild SCSS and nodejs-style javascript, then reload the page or stylesheets as necessary.
 
