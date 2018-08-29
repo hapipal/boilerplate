@@ -1,11 +1,11 @@
 {
-  "name": "hapi-pal",
-  "version": "2.0.0",
+  "name": "hapipal-boilerplate",
+  "version": "2.1.0",
   "main": "lib/index.js",
   "scripts": {
     "knex": "knex",
     "start": "node server",
-    "test": "lab -a code -I '__core-js_shared__' -L",
+    "test": "lab -a code -I '__core-js_shared__' -L -m 0",
     "lint": "eslint ."
   },
   "dependencies": {
@@ -18,15 +18,17 @@
   "devDependencies": {
     "code": "5.x.x",
     "confidence": "3.x.x",
-    "dotenv": "4.x.x",
-    "eslint": "4.x.x",
-    "eslint-config-hapi": "11.x.x",
+    "dotenv": "6.x.x",
+    "eslint": "5.4.x",
+    "eslint-config-hapi": "12.x.x",
     "eslint-plugin-hapi": "4.x.x",
     "glue": "5.x.x",
     "hapi": "17.x.x",
     "hoek": "5.x.x",
-    "knex": "0.14.x",
-    "lab": "15.x.x",
-    "sqlite3": "4.x.x"
+    "hpal-debug": "1.x.x",
+    "knex": "0.15.x",
+    "lab": "16.x.x",
+    "sqlite3": "4.x.x",
+    "toys": "2.x.x"
   }
 }
