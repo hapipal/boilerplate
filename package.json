@@ -5,7 +5,7 @@
   "scripts": {
     "knex": "knex",
     "start": "node server",
-    "test": "lab -a code -I '__core-js_shared__' -L -m 0",
+    "test": "lab -a code -I '__core-js_shared__' -L",
     "lint": "eslint ."
   },
   "dependencies": {
