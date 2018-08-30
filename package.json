@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "code": "5.x.x",
-    "eslint": "5.4.x",
+    "eslint": "5.x.x",
     "eslint-config-hapi": "12.x.x",
     "eslint-plugin-hapi": "4.x.x",
     "hpal-debug": "1.x.x",
