@@ -2,6 +2,7 @@
 
 const Dotenv = require('dotenv');
 const Confidence = require('confidence');
+const Toys = require('toys');
 
 // Pull .env into process.env
 Dotenv.config({ path: `${__dirname}/.env` });
@@ -25,6 +26,13 @@ module.exports = new Confidence.Store({
                 plugin: '../lib', // Main plugin
                 options: {
                     developmentMode: (process.env.NODE_ENV !== 'production')
+                }
+            },
+            {
+                plugin: {
+                    $filter: 'NODE_ENV',
+                    $default: 'hpal-debug',
+                    production: Toys.noop
                 }
             }
         ]
