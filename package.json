@@ -1,6 +1,6 @@
 {
-  "name": "hapi-pal",
-  "version": "2.0.0",
+  "name": "hapipal-boilerplate",
+  "version": "2.1.0",
   "main": "lib/index.js",
   "scripts": {
     "start": "node server",
@@ -15,16 +15,18 @@
   "devDependencies": {
     "code": "5.x.x",
     "confidence": "3.x.x",
-    "dotenv": "4.x.x",
-    "eslint": "4.x.x",
-    "eslint-config-hapi": "11.x.x",
+    "dotenv": "6.x.x",
+    "eslint": "5.x.x",
+    "eslint-config-hapi": "12.x.x",
     "eslint-plugin-hapi": "4.x.x",
     "glue": "5.x.x",
     "handlebars": "4.x.x",
     "hapi": "17.x.x",
     "hapi-swagger": "9.x.x",
+    "hpal-debug": "1.x.x",
     "inert": "5.x.x",
-    "lab": "15.x.x",
+    "lab": "16.x.x",
+    "toys": "2.x.x",
     "vision": "5.x.x"
   }
 }
