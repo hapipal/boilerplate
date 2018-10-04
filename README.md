@@ -10,6 +10,7 @@
     <img src='https://img.shields.io/badge/slack-@hapihour/hapipal-orange.svg?logo=slack' />
   </a>
   </h1>
+  <br>
 </div>
 
 > A friendly, proven starting place for your next hapi plugin or deployment
