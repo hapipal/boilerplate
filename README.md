@@ -1,10 +1,11 @@
 <h1 align="center">
   <br>
-  <a href="https://hapipal.com"><img src="https://imgur.com/shaShr0.png" alt="hapipal" width="200"></a>
+  <a href="https://hapipal.com" target="_blank"><img src="https://imgur.com/shaShr0.png" alt="hapipal" width="200"></a>
   <br>
   hapipal boilerplate
   <br>
-  <a href='https://join.slack.com/t/hapihour/shared_invite/enQtMjM5Njk1NDgzNTY5LThmODkxODIzOTg5NjJjODFiYjcxZDMxMTAyMzBkZDk3MWY4MTFlNDAyMTU3MmUwMmM0Y2UwMjU3YjAwYjRkN2E'>
+  <a
+  target="_blank"  href='https://join.slack.com/t/hapihour/shared_invite/enQtMjM5Njk1NDgzNTY5LThmODkxODIzOTg5NjJjODFiYjcxZDMxMTAyMzBkZDk3MWY4MTFlNDAyMTU3MmUwMmM0Y2UwMjU3YjAwYjRkN2E'>
     <img src='https://img.shields.io/badge/slack-@hapihour/hapipal-orange.svg?logo=slack' />
   </a>
 </h1>
