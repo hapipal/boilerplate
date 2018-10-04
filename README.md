@@ -42,7 +42,7 @@ git commit -m "Init commit"
 ```
 
 <details>
-    <summary>(Click to expand)
+    <summary> (Click to expand) **Manual cloning instructions**
 
 [npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) comes with npm 5.2+ and higher.  here you can find instructions for older npm versions.
     </summary>
@@ -153,6 +153,8 @@ npx hpal docs route.options.handler
 hapi pal makes it easy to use the boilerplate as a jumping-off point for several different types of projects, which we call "flavors" (:lollipop: :fries: :doughnut: :poultry_leg:).  Flavors may be mixed and matched, or skipped altogether.  Only utilize them if they'll be useful to you!
 
 They're simple little buggers.  We've simply tagged commits that we think will contain useful code patches depending on what direction you'd like to take your project.
+
+**NOTE** Since flavors are just tagged commits, please be aware that you may experience merge conflicts when mixing flavors together
 
 **Pull down the latest flavors**
 
