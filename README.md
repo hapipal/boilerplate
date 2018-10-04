@@ -1,6 +1,16 @@
-# the pal boilerplate
+<h1 align="center">
+  <br>
+  <a href="https://hapipal.com"><img src="https://imgur.com/shaShr0.png" alt="hapipal" width="200"></a>
+  <br>
+  <br>
+  hapipal boilerplate
+  <br>
+  <a href='https://join.slack.com/t/hapihour/shared_invite/enQtMjM5Njk1NDgzNTY5LThmODkxODIzOTg5NjJjODFiYjcxZDMxMTAyMzBkZDk3MWY4MTFlNDAyMTU3MmUwMmM0Y2UwMjU3YjAwYjRkN2E'>
+    <img src='https://img.shields.io/badge/slack-@hapihour/hapipal-orange.svg?logo=slack' />
+  </a>
+</h1>
 
-A friendly, proven starting place for your next hapi plugin or deployment
+> A friendly, proven starting place for your next hapi plugin or deployment
 
 Lead Maintainer - [Devin Ivy](https://github.com/devinivy)
 
@@ -26,7 +36,6 @@ npm install
 
 <details>
     <summary>–
-
 [npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) comes with npm 5.2+ and higher.  here you can find instructions for older npm versions.
     </summary>
 
