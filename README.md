@@ -42,12 +42,11 @@ git commit -m "Init commit"
 ```
 
 <details>
-    <summary> (Click to expand) Manual cloning instructions
+    <summary> (Click to expand) Alternate install without npx
 
 [npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) comes with npm 5.2+ and higher.  here you can find instructions for older npm versions.
     </summary>
 
-With the [`hpal`](https://github.com/hapipal/hpal) CLI,
 ```sh
 npm install --global hpal
 hpal new my-project
@@ -55,8 +54,11 @@ cd ./my-project
 npm install
 ```
 Going forward, any instructions that use npx can directly use your global installation of `hpal` instead.  Just replace CLI instructions that say `npx hpal` with `hpal`.
+</details>
+<br>
+<details>
+    <summary> (Click to expand) Manual boilerplate install instructions (without `hpal`)</summary>
 
-Without the `hpal` CLI,
 ```sh
 git clone --depth=1 --origin=pal --branch=pal git@github.com:hapipal/boilerplate.git my-project
 cd my-project
