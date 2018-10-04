@@ -57,7 +57,7 @@ Going forward, any instructions that use npx can directly use your global instal
 </details>
 <br>
 <details>
-    <summary> (Click to expand) Manual boilerplate install instructions (without `hpal`)</summary>
+    <summary> (Click to expand) Manual boilerplate install instructions (without hpal)</summary>
 
 ```sh
 git clone --depth=1 --origin=pal --branch=pal git@github.com:hapipal/boilerplate.git my-project
