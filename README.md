@@ -55,7 +55,6 @@ npm install
 ```
 Going forward, any instructions that use npx can directly use your global installation of `hpal` instead.  Just replace CLI instructions that say `npx hpal` with `hpal`.
 </details>
-<br>
 <details>
     <summary> (Click to expand) Manual boilerplate install instructions (without hpal)</summary>
 
