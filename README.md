@@ -42,7 +42,7 @@ git commit -m "Init commit"
 ```
 
 <details>
-    <summary> (Click to expand) **Manual cloning instructions**
+    <summary> (Click to expand) Manual cloning instructions
 
 [npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) comes with npm 5.2+ and higher.  here you can find instructions for older npm versions.
     </summary>
