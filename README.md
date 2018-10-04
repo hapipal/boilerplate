@@ -227,3 +227,9 @@ For example the first version of the "custom swagger" flavor is,
 ```
 custom-swagger-v1.0.0
 ```
+
+<br>
+<div align='center'>
+  <img src='https://imgur.com/rWnkFOO.png' />
+</div>
+<br>
