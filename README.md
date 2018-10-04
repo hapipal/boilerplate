@@ -35,6 +35,10 @@ Lead Maintainer - [Devin Ivy](https://github.com/devinivy)
 npx hpal new my-project
 cd ./my-project
 npm install
+
+# Make your first commit to init project history
+git add --all
+git commit -m "Init commit"
 ```
 
 <details>
@@ -125,15 +129,17 @@ module.exports = {
 };
 ```
 
-Now start your server and try hitting it in-browser or over `curl`.
+Now we will use a feature of `hpal` to hit a server route by name
 ```sh
-npm start
-# Server started at http://0.0.0.0:3000
+npx hpal run debug:curl random-quotation
+# { quotation: 'I want a turkey nut yogurt cane!', saidBy: 'Stimpy' }
 ```
 
+More on `hpal` [here](https://github.com/hapipal/hpal)
+
+To see a list of available hpal commands, run
 ```sh
-curl http://localhost:3000/random-quotation
-# {"quotation":"I would rather fish any day than go to heaven.","saidBy":"Cornelia \"Fly Rod\" Crosby"}
+npx hpal run --list
 ```
 
 **And that's it!**  Keep in mind that if you run into anything along the way that's unfamiliar to you, you can always search the hapi API documentation using `hpal`.
