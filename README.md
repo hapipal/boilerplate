@@ -231,7 +231,7 @@ custom-swagger-v1.0.0
 <br>
 <a href='https://hapipal.com'>
   <div align='center'>
-    <img src='https://imgur.com/rWnkFOO.png' />
+    <img width='280' src='https://imgur.com/rWnkFOO.png' />
   </div>
 </a>
 <br>
