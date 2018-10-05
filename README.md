@@ -35,10 +35,6 @@ Lead Maintainer - [Devin Ivy](https://github.com/devinivy)
 npx hpal new my-project
 cd ./my-project
 npm install
-
-# Make your first commit to init project history
-git add --all
-git commit -m "Init commit"
 ```
 
 <details>
@@ -66,6 +62,12 @@ npm init
 npm install
 ```
 </details>
+
+#### Make your first commit to init project history
+```sh
+git add --all
+git commit -m "Init commit"
+```
 
 ### Creating your first route
 Here we'll will pick-up where we left off (inside a new pal project folder with all dependencies installed) and create a route that serves a random quotation.
