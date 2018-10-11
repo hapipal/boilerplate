@@ -42,7 +42,7 @@ npm install
 <details>
   <summary> <i>(click to expand)</i>
 
-[npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) comes with npm 5.2+ and higher.  here you can find instructions for older npm versions.
+The [npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) command comes with npm 5.2+ and higher.  Here you can find instructions for older npm versions.
   </summary>
 
 ```sh
@@ -56,7 +56,7 @@ Going forward, any instructions that use npx can directly use your global instal
 <details>
   <summary> <i>(click to expand)</i>
 
-perhaps you'd like to perform a manual installation without any fancy CLI tools—that's possible too!  here you can find instructions for installation using only git.
+Perhaps you'd like to perform a manual installation without any fancy CLI tools—that's possible too!  Here you can find instructions for installation using only git.
   </summary>
 
 ```sh
