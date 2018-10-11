@@ -1,19 +1,17 @@
-<div align="center">
-  <br>
-  <a href="https://hapipal.com" target="_blank"><img src="https://imgur.com/shaShr0.png" alt="hapipal" width="200"></a>
-  <br>
-  <h1 align="center">
-  hapipal boilerplate
-  <br>
-  <a
-  target="_blank"  href='https://join.slack.com/t/hapihour/shared_invite/enQtMjM5Njk1NDgzNTY5LThmODkxODIzOTg5NjJjODFiYjcxZDMxMTAyMzBkZDk3MWY4MTFlNDAyMTU3MmUwMmM0Y2UwMjU3YjAwYjRkN2E'>
+<p align="center">
+  <a href="https://hapipal.com"><img src="https://imgur.com/shaShr0.png" alt="hapi pal" width="200" /></a>
+</p>
+<h3 align="center">
+  the pal boilerplate
+</h3>
+<p align="center">
+  A friendly, proven starting place for your next hapi plugin or deployment
+</p>
+<p align="center">
+  <a target="_blank" href='https://join.slack.com/t/hapihour/shared_invite/enQtMjM5Njk1NDgzNTY5LThmODkxODIzOTg5NjJjODFiYjcxZDMxMTAyMzBkZDk3MWY4MTFlNDAyMTU3MmUwMmM0Y2UwMjU3YjAwYjRkN2E'>
     <img src='https://img.shields.io/badge/slack-@hapihour/hapipal-orange.svg?logo=slack' />
   </a>
-  </h1>
-  <br>
-</div>
-
-> A friendly, proven starting place for your next hapi plugin or deployment
+</p>
 
 Lead Maintainer - [Devin Ivy](https://github.com/devinivy)
 
@@ -38,10 +36,10 @@ npm install
 ```
 
 <details>
-    <summary> (Click to expand) Alternate install without npx
+  <summary> <i>(click to expand)</i>
 
 [npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) comes with npm 5.2+ and higher.  here you can find instructions for older npm versions.
-    </summary>
+  </summary>
 
 ```sh
 npm install --global hpal
@@ -52,7 +50,10 @@ npm install
 Going forward, any instructions that use npx can directly use your global installation of `hpal` instead.  Just replace CLI instructions that say `npx hpal` with `hpal`.
 </details>
 <details>
-    <summary> (Click to expand) Manual boilerplate install instructions (without hpal)</summary>
+  <summary> <i>(click to expand)</i>
+
+perhaps you'd like to perform a manual installation without any fancy CLI tools—that's possible too!  here you can find instructions for installation using only git.
+  </summary>
 
 ```sh
 git clone --depth=1 --origin=pal --branch=pal git@github.com:hapipal/boilerplate.git my-project
@@ -132,17 +133,21 @@ module.exports = {
 };
 ```
 
-Now we will use a feature of `hpal` to hit a server route by name
+Now start your server and try hitting it in-browser or over `curl`.
+```sh
+npm start
+# Server started at http://0.0.0.0:3000
+```
+
+```sh
+curl http://localhost:3000/random-quotation
+# {"quotation":"I would rather fish any day than go to heaven.","saidBy":"Cornelia \"Fly Rod\" Crosby"}
+```
+
+This common practice of restarting the server and curling can be simplified by leveraging [hpal-debug](https://github.com/hapipal/hpal-debug)'s curl command, which allows you to hit a route using its name _without having a started server_!
 ```sh
 npx hpal run debug:curl random-quotation
 # { quotation: 'I want a turkey nut yogurt cane!', saidBy: 'Stimpy' }
-```
-
-More on `hpal` [here](https://github.com/hapipal/hpal)
-
-To see a list of available hpal commands, run
-```sh
-npx hpal run --list
 ```
 
 **And that's it!**  Keep in mind that if you run into anything along the way that's unfamiliar to you, you can always search the hapi API documentation using `hpal`.
