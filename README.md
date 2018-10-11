@@ -8,8 +8,8 @@
   A friendly, proven starting place for your next hapi plugin or deployment
 </p>
 <p align="center">
-  <a target="_blank" href='https://join.slack.com/t/hapihour/shared_invite/enQtMjM5Njk1NDgzNTY5LThmODkxODIzOTg5NjJjODFiYjcxZDMxMTAyMzBkZDk3MWY4MTFlNDAyMTU3MmUwMmM0Y2UwMjU3YjAwYjRkN2E'>
-    <img src='https://img.shields.io/badge/slack-@hapihour/hapipal-orange.svg?logo=slack' />
+  <a target="_blank" href="https://join.slack.com/t/hapihour/shared_invite/enQtMjM5Njk1NDgzNTY5LThmODkxODIzOTg5NjJjODFiYjcxZDMxMTAyMzBkZDk3MWY4MTFlNDAyMTU3MmUwMmM0Y2UwMjU3YjAwYjRkN2E">
+    <img alt="Slack: hapihour/hapipal" src="https://img.shields.io/badge/slack-hapihour/hapipal-orange.svg?logo=slack&style=flat-square" />
   </a>
 </p>
 
@@ -29,6 +29,10 @@ Lead Maintainer - [Devin Ivy](https://github.com/devinivy)
  - The code is minimal and completely generic– no need to find-and-replace with your project name to get started.
 
 ## Getting Started
+> If you're interested to hear about why we came together to create pal, check out our Medium article [Introducing hapi pal](https://medium.com/@hapipal/introducing-hapi-pal-550c13f30c5b).
+>
+> Below is a simple tutorial to create your first route.  For a more in-depth look at the pal ecosystem, database integration, etc. see [our official starting guide](https://hapipal.com/getting-started).
+
 ```sh
 npx hpal new my-project
 cd ./my-project
