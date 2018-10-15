@@ -1,6 +1,17 @@
-# the pal boilerplate
-
-A friendly, proven starting place for your next hapi plugin or deployment
+<p align="center">
+  <a href="https://hapipal.com"><img src="https://imgur.com/shaShr0.png" alt="hapi pal" width="200" /></a>
+</p>
+<h3 align="center">
+  the pal boilerplate
+</h3>
+<p align="center">
+  A friendly, proven starting place for your next hapi plugin or deployment
+</p>
+<p align="center">
+  <a target="_blank" href="https://join.slack.com/t/hapihour/shared_invite/enQtMjM5Njk1NDgzNTY5LThmODkxODIzOTg5NjJjODFiYjcxZDMxMTAyMzBkZDk3MWY4MTFlNDAyMTU3MmUwMmM0Y2UwMjU3YjAwYjRkN2E">
+    <img alt="Slack: hapihour/hapipal" src="https://img.shields.io/badge/slack-hapihour/hapipal-orange.svg?logo=slack&style=flat-square" />
+  </a>
+</p>
 
 Lead Maintainer - [Devin Ivy](https://github.com/devinivy)
 
@@ -18,6 +29,10 @@ Lead Maintainer - [Devin Ivy](https://github.com/devinivy)
  - The code is minimal and completely generic– no need to find-and-replace with your project name to get started.
 
 ## Getting Started
+> If you're interested to hear about why we came together to create pal, check out our Medium article [Introducing hapi pal](https://medium.com/@hapipal/introducing-hapi-pal-550c13f30c5b).
+>
+> Below is a simple tutorial to create your first route.  For a more in-depth look at the pal ecosystem, database integration, etc. see [our official starting guide](https://hapipal.com/getting-started).
+
 ```sh
 npx hpal new my-project
 cd ./my-project
@@ -25,12 +40,11 @@ npm install
 ```
 
 <details>
-    <summary>–
+  <summary> <i>(click to expand)</i>
 
-[npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) comes with npm 5.2+ and higher.  here you can find instructions for older npm versions.
-    </summary>
+The [npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) command comes with npm 5.2+ and higher.  Here you can find instructions for older npm versions.
+  </summary>
 
-With the [`hpal`](https://github.com/hapipal/hpal) CLI,
 ```sh
 npm install --global hpal
 hpal new my-project
@@ -38,8 +52,13 @@ cd ./my-project
 npm install
 ```
 Going forward, any instructions that use npx can directly use your global installation of `hpal` instead.  Just replace CLI instructions that say `npx hpal` with `hpal`.
+</details>
+<details>
+  <summary> <i>(click to expand)</i>
 
-Without the `hpal` CLI,
+Perhaps you'd like to perform a manual installation without any fancy CLI tools—that's possible too!  Here you can find instructions for installation using only git.
+  </summary>
+
 ```sh
 git clone --depth=1 --origin=pal --branch=pal git@github.com:hapipal/boilerplate.git my-project
 cd my-project
@@ -48,6 +67,12 @@ npm init
 npm install
 ```
 </details>
+
+#### Make your first commit to init project history
+```sh
+git add --all
+git commit -m "Init commit"
+```
 
 ### Creating your first route
 Here we'll will pick-up where we left off (inside a new pal project folder with all dependencies installed) and create a route that serves a random quotation.
@@ -123,6 +148,12 @@ curl http://localhost:3000/random-quotation
 # {"quotation":"I would rather fish any day than go to heaven.","saidBy":"Cornelia \"Fly Rod\" Crosby"}
 ```
 
+This common practice of restarting the server and curling can be simplified by leveraging [hpal-debug](https://github.com/hapipal/hpal-debug)'s curl command, which allows you to hit a route using its name _without having a started server_!
+```sh
+npx hpal run debug:curl random-quotation
+# { quotation: 'I want a turkey nut yogurt cane!', saidBy: 'Stimpy' }
+```
+
 **And that's it!**  Keep in mind that if you run into anything along the way that's unfamiliar to you, you can always search the hapi API documentation using `hpal`.
 
 ```sh
@@ -134,6 +165,8 @@ npx hpal docs route.options.handler
 hapi pal makes it easy to use the boilerplate as a jumping-off point for several different types of projects, which we call "flavors" (:lollipop: :fries: :doughnut: :poultry_leg:).  Flavors may be mixed and matched, or skipped altogether.  Only utilize them if they'll be useful to you!
 
 They're simple little buggers.  We've simply tagged commits that we think will contain useful code patches depending on what direction you'd like to take your project.
+
+**NOTE** Since flavors are just tagged commits, please be aware that you may experience merge conflicts when mixing flavors together
 
 **Pull down the latest flavors**
 
@@ -205,3 +238,11 @@ For example the first version of the "custom swagger" flavor is,
 ```
 custom-swagger-v1.0.0
 ```
+
+<br>
+<a href='https://hapipal.com'>
+  <div align='center'>
+    <img width='280' src='https://imgur.com/rWnkFOO.png' />
+  </div>
+</a>
+<br>
