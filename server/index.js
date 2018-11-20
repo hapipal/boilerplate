@@ -5,7 +5,7 @@ const Manifest = require('./manifest');
 
 exports.deployment = async (start) => {
 
-    const manifest = Manifest.get('/', process.env);
+    const manifest = Manifest.get('/');
     const server = await Glue.compose(manifest, { relativeTo: __dirname });
 
     await server.initialize();
