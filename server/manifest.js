@@ -10,13 +10,20 @@ Dotenv.config({ path: `${__dirname}/.env` });
 // Glue manifest as a confidence store
 module.exports = new Confidence.Store({
     server: {
-        host: '0.0.0.0',
-        port: process.env.PORT || 3000,
+        host: 'localhost',
+        port: {
+            $env: 'PORT',
+            $coerce: 'number',
+            $default: 3000
+        },
         debug: {
-            $filter: 'NODE_ENV',
-            development: {
-                log: ['error', 'implementation', 'internal'],
-                request: ['error', 'implementation', 'internal']
+            $filter: { $env: 'NODE_ENV' },
+            $default: {
+                log: ['error'],
+                request: ['error']
+            },
+            production: {
+                request: ['implementation']
             }
         }
     },
@@ -28,7 +35,7 @@ module.exports = new Confidence.Store({
             },
             {
                 plugin: {
-                    $filter: 'NODE_ENV',
+                    $filter: { $env: 'NODE_ENV' },
                     $default: 'hpal-debug',
                     production: Toys.noop
                 }
