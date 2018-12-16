@@ -1,6 +1,6 @@
 {
   "name": "hapipal-boilerplate",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "main": "lib/index.js",
   "scripts": {
     "start": "node server",
@@ -15,13 +15,13 @@
     "handlebars": "4.x.x",
     "haute-couture": "3.x.x",
     "inert": "5.x.x",
-    "joi": "13.x.x",
+    "joi": "14.x.x",
     "vision": "5.x.x"
   },
   "devDependencies": {
     "code": "5.x.x",
     "cssnano": "4.x.x",
-    "confidence": "3.x.x",
+    "confidence": "4.x.x",
     "dotenv": "6.x.x",
     "eslint": "5.x.x",
     "eslint-config-hapi": "12.x.x",
@@ -29,7 +29,7 @@
     "glue": "5.x.x",
     "hapi": "17.x.x",
     "hpal-debug": "1.x.x",
-    "lab": "16.x.x",
+    "lab": "18.x.x",
     "postcss": "7.x.x",
     "postcss-cli": "6.x.x",
     "toys": "2.x.x",
