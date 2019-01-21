@@ -12,7 +12,7 @@
     "confidence": "4.x.x",
     "dotenv": "6.x.x",
     "glue": "5.x.x",
-    "hapi": "17.x.x",
+    "hapi": "18.x.x",
     "haute-couture": "3.x.x",
     "joi": "14.x.x",
     "toys": "2.x.x"
