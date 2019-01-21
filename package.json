@@ -4,7 +4,7 @@
   "main": "lib/index.js",
   "scripts": {
     "start": "node server",
-    "test": "lab -a code -L",
+    "test": "lab -a code -I 'core,__core-js_shared__' -L",
     "lint": "eslint ."
   },
   "dependencies": {
@@ -21,8 +21,11 @@
     "eslint-plugin-hapi": "4.x.x",
     "glue": "5.x.x",
     "hapi": "18.x.x",
+    "hapi-swagger": "9.x.x",
     "hpal-debug": "1.x.x",
+    "inert": "5.x.x",
     "lab": "18.x.x",
-    "toys": "2.x.x"
+    "toys": "2.x.x",
+    "vision": "5.x.x"
   }
 }
