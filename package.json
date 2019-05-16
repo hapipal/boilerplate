@@ -4,29 +4,30 @@
   "main": "lib/index.js",
   "scripts": {
     "start": "node server",
-    "test": "lab -a code -I 'core,__core-js_shared__' -L",
+    "test": "lab -a @hapi/code -I 'core,__core-js_shared__' -L",
     "lint": "eslint ."
   },
   "dependencies": {
-    "boom": "7.x.x",
-    "haute-couture": "3.x.x",
-    "joi": "14.x.x"
+    "@hapi/boom": "7.x.x",
+    "@hapi/joi": "15.x.x",
+    "haute-couture": "3.x.x"
   },
   "devDependencies": {
-    "code": "5.x.x",
+    "@hapi/code": "5.x.x",
+    "@hapi/eslint-config-hapi": "12.x.x",
+    "@hapi/eslint-plugin-hapi": "4.x.x",
+    "@hapi/glue": "6.x.x",
+    "@hapi/hapi": "18.x.x",
+    "@hapi/inert": "5.x.x",
+    "@hapi/lab": "19.x.x",
+    "@hapi/vision": "5.x.x",
     "confidence": "4.x.x",
-    "dotenv": "6.x.x",
+    "dotenv": "8.x.x",
     "eslint": "5.x.x",
-    "eslint-config-hapi": "12.x.x",
-    "eslint-plugin-hapi": "4.x.x",
-    "glue": "5.x.x",
     "handlebars": "4.x.x",
-    "hapi": "18.x.x",
     "hapi-swagger": "9.x.x",
+    "hpal": "2.x.x",
     "hpal-debug": "1.x.x",
-    "inert": "5.x.x",
-    "lab": "18.x.x",
-    "toys": "2.x.x",
-    "vision": "5.x.x"
+    "toys": "2.x.x"
   }
 }
