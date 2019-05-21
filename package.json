@@ -1,11 +1,10 @@
 {
   "name": "hapipal-boilerplate",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "main": "lib/index.js",
   "scripts": {
-    "knex": "knex",
     "start": "node server",
-    "test": "lab -a @hapi/code -I 'core,__core-js_shared__,regeneratorRuntime,_babelPolyfill' -L",
+    "test": "lab -a @hapi/code -L",
     "lint": "eslint ."
   },
   "dependencies": {
