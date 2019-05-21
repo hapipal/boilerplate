@@ -2,8 +2,8 @@
 
 // Load modules
 
-const Code = require('code');
-const Lab = require('lab');
+const Code = require('@hapi/code');
+const Lab = require('@hapi/lab');
 const Server = require('../server');
 const Package = require('../package.json');
 
