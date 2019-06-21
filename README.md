@@ -8,7 +8,7 @@
   A friendly, proven starting place for your next hapi plugin or deployment
 </p>
 <p align="center">
-  <a target="_blank" href="https://join.slack.com/t/hapihour/shared_invite/enQtMjM5Njk1NDgzNTY5LThmODkxODIzOTg5NjJjODFiYjcxZDMxMTAyMzBkZDk3MWY4MTFlNDAyMTU3MmUwMmM0Y2UwMjU3YjAwYjRkN2E">
+  <a target="_blank" href="https://join.slack.com/t/hapihour/shared_invite/enQtNTA5MDUzOTAzOTU4LTUyZmFiYjkyMTBmNDcyMmI2MmRjMzg4Y2YzNTlmNzUzNjViN2U1NmYyY2NjYjhiYWU4MGE2OTFhZDRlYWMyZDY">
     <img alt="Slack: hapihour/hapipal" src="https://img.shields.io/badge/slack-hapihour/hapipal-orange.svg?logo=slack&style=flat-square" />
   </a>
 </p>
@@ -71,19 +71,16 @@ npm install
 #### Make your first commit to init project history
 ```sh
 git add --all
-git commit -m "Init commit"
+git commit -m "Initial commit"
 ```
 
 ### Creating your first route
 Here we'll will pick-up where we left off (inside a new pal project folder with all dependencies installed) and create a route that serves a random quotation.
 
 ```sh
-# First, consider installing hpal globally,
-npm install --global hpal
-# or locally to your project,
-npm install --save-dev hpal
-```
-```sh
+# hpal comes installed as a dev dependency,
+# so you can invoke within your project using npx.
+
 npx hpal make route random-quotation
 # Wrote lib/routes/random-quotation.js
 ```
