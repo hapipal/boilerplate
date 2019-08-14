@@ -1,11 +1,7 @@
 'use strict';
 
-const Dotenv = require('dotenv');
 const Confidence = require('confidence');
 const Toys = require('toys');
-
-// Pull .env into process.env
-Dotenv.config({ path: `${__dirname}/.env` });
 
 // Glue manifest as a confidence store
 module.exports = new Confidence.Store({
