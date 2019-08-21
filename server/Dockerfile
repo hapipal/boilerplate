@@ -36,7 +36,7 @@ FROM dependencies AS test
 USER node
 ENV NODE_ENV=test
 # use `sh -c` so we can chain test commands using `&&`
-CMD sh -c "npm run lint && npm test"
+CMD ["npm", "test"]
 
 # release ready image, devDeps are pruned and tests removed for size control
 FROM dependencies AS release
