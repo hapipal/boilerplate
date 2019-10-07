@@ -9,21 +9,21 @@
   },
   "dependencies": {
     "@hapi/boom": "8.x.x",
+    "@hapi/glue": "6.x.x",
+    "@hapi/hapi": "18.x.x",
     "@hapi/joi": "16.x.x",
-    "haute-couture": "3.x.x"
+    "confidence": "4.x.x",
+    "dotenv": "8.x.x",
+    "haute-couture": "3.x.x",
+    "toys": "2.x.x"
   },
   "devDependencies": {
     "@hapi/code": "6.x.x",
     "@hapi/eslint-config-hapi": "12.x.x",
     "@hapi/eslint-plugin-hapi": "4.x.x",
-    "@hapi/glue": "6.x.x",
-    "@hapi/hapi": "18.x.x",
     "@hapi/lab": "20.x.x",
-    "confidence": "4.x.x",
-    "dotenv": "8.x.x",
     "eslint": "6.x.x",
     "hpal": "2.x.x",
-    "hpal-debug": "1.x.x",
-    "toys": "2.x.x"
+    "hpal-debug": "1.x.x"
   }
 }
