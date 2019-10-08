@@ -5,25 +5,43 @@
   "scripts": {
     "start": "node server",
     "test": "lab -a @hapi/code -L",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "prebuild:css": "node-sass lib/public/css/main.scss lib/public/css/main.build.css --source-map true",
+    "build:css": "postcss lib/public/css/main.build.css -o lib/public/css/main.build.min.css --use cssnano --no-map",
+    "prebuild:js": "browserify lib/public/js/main.js -o lib/public/js/main.build.js -d -t [ babelify --presets [ @babel/preset-env ] ]",
+    "build:js": "uglifyjs lib/public/js/main.build.js -o lib/public/js/main.build.min.js",
+    "build": "npm run build:css && npm run build:js"
   },
   "dependencies": {
     "@hapi/boom": "8.x.x",
+    "@hapi/inert": "5.x.x",
     "@hapi/joi": "16.x.x",
+    "@hapi/vision": "5.x.x",
+    "handlebars": "4.x.x",
     "haute-couture": "3.x.x"
   },
   "devDependencies": {
+    "@babel/preset-env": "7.x.x",
+    "@babel/core": "7.x.x",
     "@hapi/code": "6.x.x",
     "@hapi/eslint-config-hapi": "12.x.x",
     "@hapi/eslint-plugin-hapi": "4.x.x",
     "@hapi/glue": "6.x.x",
     "@hapi/hapi": "18.x.x",
     "@hapi/lab": "20.x.x",
+    "babelify": "10.x.x",
+    "browser-sync": "2.x.x",
+    "browserify": "16.x.x",
     "confidence": "4.x.x",
+    "cssnano": "4.x.x",
     "dotenv": "8.x.x",
     "eslint": "6.x.x",
     "hpal": "2.x.x",
     "hpal-debug": "1.x.x",
-    "toys": "2.x.x"
+    "node-sass": "4.x.x",
+    "postcss": "7.x.x",
+    "postcss-cli": "6.x.x",
+    "toys": "2.x.x",
+    "uglify-js": "3.x.x"
   }
 }
