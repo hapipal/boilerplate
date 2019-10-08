@@ -1,7 +1,7 @@
 'use strict';
 
-const Inert = require('inert');
-const Vision = require('vision');
+const Inert = require('@hapi/inert');
+const Vision = require('@hapi/vision');
 const Handlebars = require('handlebars');
 const HapiSwagger = require('hapi-swagger');
 const Package = require('../../../package.json');
