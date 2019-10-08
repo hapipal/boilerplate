@@ -2,7 +2,6 @@
 
 const Inert = require('@hapi/inert');
 const Vision = require('@hapi/vision');
-const Handlebars = require('handlebars');
 const HapiSwagger = require('hapi-swagger');
 const Package = require('../../../package.json');
 
@@ -16,7 +15,7 @@ module.exports = {
             {
                 plugin: HapiSwagger,
                 options: {
-                    documentationPage: false,
+                    templates: __dirname,
                     validatorUrl: null,
                     info: {
                         version: Package.version
@@ -24,16 +23,5 @@ module.exports = {
                 }
             }
         ]);
-
-        server.views({
-            engines: { html: Handlebars },
-            path: __dirname
-        });
-
-        server.route({
-            method: 'get',
-            path: '/documentation',
-            handler: { view: { template: 'swagger' } }
-        });
     }
 };
