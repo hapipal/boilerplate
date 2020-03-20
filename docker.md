@@ -88,9 +88,15 @@ run your full test suite. The container will exit with the same code as your tes
 runner, which means that in CI you can run `npm run docker:test:ci` as your test step to
 automatically build your test image and then run your tests inside of it.
 
-#### `release`
-The `release` stage is meant to run your server in a production-like setup. The
+#### `development`
+The `development` stage is meant to run your server locally with dev deps installed. The
 `docker-compose.yml` file can be used to tweak the environment variables used for
+this stage when running locally, and the logic for building this stage should not
+make any assumptions about what environment the output will be used in.
+
+#### `release`
+The `release` stage is meant to run your server in a production-like setup without dev deps.
+The `docker-compose.yml` file can be used to tweak the environment variables used for
 this stage when running locally, and the logic for building this stage should not
 make any assumptions about what environment the output will be used in.
 

@@ -19,10 +19,16 @@ COPY package*.json ./
 RUN npm set progress=false \
     && npm config set depth 0 \
     && npm i
+
 COPY .eslintrc.json .
 COPY ./server ./server
 COPY ./test ./test
 COPY ./lib ./lib
+
+# `node` user is created in base node image
+# we want to use this non-root user for running the server in case of attack
+# https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md#non-root-user
+USER node
 
 # if you have any build scripts to run, like for the `templated-site` flavor
 # uncomment and possibly modify the following RUN command:
@@ -33,25 +39,22 @@ COPY ./lib ./lib
 
 # test running image using all of the files and devDeps
 FROM dependencies AS test
-USER node
 ENV NODE_ENV=test
 # use `sh -c` so we can chain test commands using `&&`
 CMD sh -c "npm run lint && npm test"
 
-# release ready image, devDeps are pruned and tests removed for size control
-FROM dependencies AS release
-
-# prune non-prod dependencies, remove test files
-RUN npm prune --production \
-    && rm -rf ./test
-
-# `node` user is created in base node image
-# we want to use this non-root user for running the server in case of attack
-# https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md#non-root-user
-USER node
+# dev ready image, contains devDeps for test running and debugging
+FROM dependencies AS development
 
 # expose port 3000 from in the container to the outside world
 # this is the default port defined in server/manifest.js, and
 # will need to be updated if you change the default port
 EXPOSE 3000
 CMD ["npm", "start"]
+
+# release ready image, devDeps are pruned and tests removed for size control
+FROM development AS release
+
+# prune non-prod dependencies, remove test files
+RUN npm prune --production \
+    && rm -rf ./test
