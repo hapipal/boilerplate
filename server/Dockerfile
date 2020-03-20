@@ -41,7 +41,7 @@ USER node
 FROM dependencies AS test
 ENV NODE_ENV=test
 # use `sh -c` so we can chain test commands using `&&`
-CMD sh -c "npm run lint && npm test"
+CMD ["npm", "test"]
 
 # dev ready image, contains devDeps for test running and debugging
 FROM dependencies AS development
