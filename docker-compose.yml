@@ -1,0 +1,42 @@
+version: '3.4'
+services:
+    web_base: &web_base
+        build:
+            context: .
+            dockerfile: server/Dockerfile
+            target: development
+        command: [
+            "./node_modules/.bin/nodemon",
+            "--watch",
+            "lib/**/*",
+            "--watch",
+            "server/**/*",
+            "server/index.js"
+        ]
+        environment:
+            - NODE_ENV=development
+        ports:
+            - 3000:3000
+    web:
+        # hack for docker-compose v3 dropping `extends` support
+        << : *web_base
+        # allows for hot-reloading of server
+        volumes:
+            - ./lib:/app/lib
+            - ./server:/app/server
+            - ./test:/app/test
+            - ./package.json:/app/package.json
+    test_base: &test_base
+        build:
+            context: .
+            dockerfile: server/Dockerfile
+            target: test
+    test:
+        # hack for docker-compose v3 dropping `extends` support
+        << : *test_base
+        # allows for hot-reloading of server
+        volumes:
+            - ./lib:/app/lib
+            - ./server:/app/server
+            - ./test:/app/test
+            - ./package.json:/app/package.json

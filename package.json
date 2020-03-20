@@ -3,6 +3,12 @@
   "version": "2.4.1",
   "main": "lib/index.js",
   "scripts": {
+    "build:test": "docker-compose build test",
+    "build:web": "docker-compose build web",
+    "docker:lint": "docker-compose run test npm run lint",
+    "docker:start": "docker-compose up -d web",
+    "docker:test": "docker-compose run test npm test",
+    "docker:test:ci": "docker-compose up --build test_base",
     "start": "node server",
     "test": "lab -a @hapi/code -L",
     "lint": "eslint ."
@@ -13,7 +19,6 @@
     "@hapi/hapi": "19.x.x",
     "@hapi/joi": "17.x.x",
     "confidence": "4.x.x",
-    "dotenv": "8.x.x",
     "haute-couture": "3.x.x",
     "toys": "2.x.x"
   },
@@ -24,6 +29,7 @@
     "@hapi/lab": "22.x.x",
     "eslint": "6.x.x",
     "hpal": "2.x.x",
-    "hpal-debug": "1.x.x"
+    "hpal-debug": "1.x.x",
+    "nodemon": "^2.0.2"
   }
 }
