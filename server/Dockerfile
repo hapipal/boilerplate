@@ -25,11 +25,6 @@ COPY ./server ./server
 COPY ./test ./test
 COPY ./lib ./lib
 
-# `node` user is created in base node image
-# we want to use this non-root user for running the server in case of attack
-# https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md#non-root-user
-USER node
-
 # if you have any build scripts to run, like for the `templated-site` flavor
 # uncomment and possibly modify the following RUN command:
 # RUN npm run build
@@ -55,6 +50,13 @@ CMD ["npm", "start"]
 # release ready image, devDeps are pruned and tests removed for size control
 FROM development AS release
 
+ENV NODE_ENV=production
+
 # prune non-prod dependencies, remove test files
 RUN npm prune --production \
     && rm -rf ./test
+
+# `node` user is created in base node image
+# we want to use this non-root user for running the server in case of attack
+# https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md#non-root-user
+USER node
