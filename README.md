@@ -207,6 +207,10 @@ npm run knex -- migrate:make my-first-migration
 
 By default all deployment-oriented dependencies are placed in package.json's `devDependencies`.  This flavor pulls all the default deployment dependencies up into `dependencies`.  This is useful when you want to use pal primarily as a deployment rather than a harness to author an application plugin.  Note that the other flavors always place their deployment-oriented dependencies in `devDependencies`, and that you will have to pull those into `dependencies` separately.
 
+#### Docker
+> `git cherry-pick docker` [[view](https://github.com/hapipal/boilerplate/commit/docker)]
+Sets up a Dockerfile and docker-compose.yml file for usage in local development. The Dockerfile is fully production ready, and just needs to integrated into a build system of your choice that supports Docker 17.05 or higher, and Docker Compose files with version v3.4. This flavor also introduces two `build` and four `docker` npm scripts, which are described in the `DOCKER.md` file that comes with the flavor.
+
 #### Templated Site
 > `git cherry-pick templated-site` [[view](https://github.com/hapipal/boilerplate/commit/templated-site)]
 
