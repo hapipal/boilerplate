@@ -209,7 +209,8 @@ By default all deployment-oriented dependencies are placed in package.json's `de
 
 #### Docker
 > `git cherry-pick docker` [[view](https://github.com/hapipal/boilerplate/commit/docker)]
-Sets up a Dockerfile and docker-compose.yml file for usage in local development. The Dockerfile is fully production ready, and just needs to integrated into a build system of your choice that supports Docker 17.05 or higher, and Docker Compose files with version v3.4. This flavor also introduces two `build` and four `docker` npm scripts, which are described in the `DOCKER.md` file that comes with the flavor.
+
+Sets up a Dockerfile and docker-compose.yml file for usage in local development. The Dockerfile is fully production ready, and just needs to integrated into a build system of your choice that supports Docker 17.05 or higher, and Docker Compose files with version v3.4. This flavor also introduces two `build` and four `docker` npm scripts, which are described in the [`DOCKER.md`](https://github.com/hapipal/boilerplate/blob/flavor-docker/DOCKER.md) file that comes with the flavor.
 
 #### Templated Site
 > `git cherry-pick templated-site` [[view](https://github.com/hapipal/boilerplate/commit/templated-site)]
