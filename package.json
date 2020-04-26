@@ -21,6 +21,7 @@
     "@hapi/inert": "6.x.x",
     "@hapi/lab": "22.x.x",
     "@hapi/vision": "6.x.x",
+    "babel-eslint": "10.x.x",
     "confidence": "4.x.x",
     "dotenv": "8.x.x",
     "eslint": "6.x.x",
