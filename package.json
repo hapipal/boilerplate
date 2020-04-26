@@ -31,6 +31,6 @@
     "eslint": "6.x.x",
     "hpal": "2.x.x",
     "hpal-debug": "1.x.x",
-    "nodemon": "^2.0.2"
+    "nodemon": "2.x.x"
   }
 }
