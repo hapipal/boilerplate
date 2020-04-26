@@ -8,7 +8,7 @@
   A friendly, proven starting place for your next hapi plugin or deployment
 </p>
 <p align="center">
-  <a target="_blank" href="https://join.slack.com/t/hapihour/shared_invite/enQtNTA5MDUzOTAzOTU4LTUyZmFiYjkyMTBmNDcyMmI2MmRjMzg4Y2YzNTlmNzUzNjViN2U1NmYyY2NjYjhiYWU4MGE2OTFhZDRlYWMyZDY">
+  <a target="_blank" href="https://join.slack.com/t/hapihour/shared_invite/enQtNTA5MDUzOTAzOTU4LTY1YzY0ZDM4YTZkNzYzOGExNDYzZjQ3YzJkNTVhNmExMDdlMjY3NDhkNDUxNjU4NTY1YjkzMTcxMzBkMzFiNWE">
     <img alt="Slack: hapihour/hapipal" src="https://img.shields.io/badge/slack-hapihour/hapipal-orange.svg?logo=slack&style=flat-square" />
   </a>
 </p>
@@ -16,7 +16,7 @@
 Lead Maintainer - [Devin Ivy](https://github.com/devinivy)
 
 **Features**
- - Supports hapi v18+
+ - Supports hapi v19+ and nodejs v12+.
  - Setup with [hpal-debug](https://github.com/hapipal/hpal-debug) hapi CLI debugging tools.
  - Provides conventions for building plugins by mapping the entire hapi plugin API onto files and folders, using [haute-couture](https://github.com/hapipal/haute-couture).
  - Designed to allow you to deploy your plugin on its own or as part of a larger application.
@@ -163,7 +163,7 @@ hapi pal makes it easy to use the boilerplate as a jumping-off point for several
 
 They're simple little buggers.  We've simply tagged commits that we think will contain useful code patches depending on what direction you'd like to take your project.
 
-**NOTE** Since flavors are just tagged commits, please be aware that you may experience merge conflicts when mixing flavors together
+**NOTE** Since flavors are just tagged commits, please be aware that you may experience merge conflicts when mixing flavors together.
 
 **Pull down the latest flavors**
 
@@ -206,6 +206,11 @@ npm run knex -- migrate:make my-first-migration
 > `git cherry-pick deployment` [[view](https://github.com/hapipal/boilerplate/commit/deployment)]
 
 By default all deployment-oriented dependencies are placed in package.json's `devDependencies`.  This flavor pulls all the default deployment dependencies up into `dependencies`.  This is useful when you want to use pal primarily as a deployment rather than a harness to author an application plugin.  Note that the other flavors always place their deployment-oriented dependencies in `devDependencies`, and that you will have to pull those into `dependencies` separately.
+
+#### Docker
+> `git cherry-pick docker` [[view](https://github.com/hapipal/boilerplate/commit/docker)]
+
+Sets up a Dockerfile and docker-compose.yml file for usage in local development. The Dockerfile is fully production ready, and just needs to integrated into a build system of your choice that supports Docker 17.05 or higher, and Docker Compose files with version v3.4. This flavor also introduces two `build` and four `docker` npm scripts, which are described in the [`DOCKER.md`](https://github.com/hapipal/boilerplate/blob/flavor-docker/DOCKER.md) file that comes with the flavor.
 
 #### Templated Site
 > `git cherry-pick templated-site` [[view](https://github.com/hapipal/boilerplate/commit/templated-site)]
