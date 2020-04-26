@@ -14,9 +14,9 @@
   },
   "dependencies": {
     "@hapi/boom": "9.x.x",
-    "@hapi/inert": "5.x.x",
+    "@hapi/inert": "6.x.x",
     "@hapi/joi": "17.x.x",
-    "@hapi/vision": "5.x.x",
+    "@hapi/vision": "6.x.x",
     "handlebars": "4.x.x",
     "haute-couture": "3.x.x"
   },
@@ -41,7 +41,7 @@
     "hpal-debug": "1.x.x",
     "node-sass": "4.x.x",
     "postcss": "7.x.x",
-    "postcss-cli": "6.x.x",
+    "postcss-cli": "7.x.x",
     "toys": "2.x.x",
     "uglify-js": "3.x.x"
   }
