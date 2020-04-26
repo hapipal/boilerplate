@@ -31,7 +31,13 @@ module.exports = new Confidence.Store({
         plugins: [
             {
                 plugin: '../lib', // Main plugin
-                options: {}
+                options: {
+                    developmentMode: {
+                        $filter: { $env: 'NODE_ENV' },
+                        $default: true,
+                        production: false
+                    }
+                }
             },
             {
                 plugin: {
