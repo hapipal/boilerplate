@@ -8,9 +8,9 @@ services:
         command: [
             "./node_modules/.bin/nodemon",
             "--watch",
-            "lib/**/*",
+            "lib",
             "--watch",
-            "server/**/*",
+            "server",
             "server/index.js"
         ]
         environment:
