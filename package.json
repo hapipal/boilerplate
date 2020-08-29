@@ -9,8 +9,13 @@
   },
   "dependencies": {
     "@hapi/boom": "9.x.x",
+    "haute-couture": "3.x.x",
     "joi": "17.x.x",
-    "haute-couture": "3.x.x"
+    "objection": "2.x.x",
+    "schwifty": "5.x.x"
+  },
+  "peerDependencies": {
+    "knex": "0.21.x"
   },
   "devDependencies": {
     "@hapi/code": "8.x.x",
@@ -18,6 +23,7 @@
     "@hapi/eslint-plugin-hapi": "4.x.x",
     "@hapi/glue": "8.x.x",
     "@hapi/hapi": "20.x.x",
+    "@hapi/hoek": "9.x.x",
     "@hapi/lab": "23.x.x",
     "babel-eslint": "10.x.x",
     "confidence": "4.x.x",
@@ -25,6 +31,8 @@
     "eslint": "7.x.x",
     "hpal": "2.x.x",
     "hpal-debug": "1.x.x",
+    "knex": "0.21.x",
+    "sqlite3": "5.x.x",
     "toys": "2.x.x"
   }
 }
