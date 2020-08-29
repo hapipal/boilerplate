@@ -16,7 +16,7 @@
 Lead Maintainer - [Devin Ivy](https://github.com/devinivy)
 
 **Features**
- - Supports hapi v19+ and nodejs v12+.
+ - Supports hapi v20+ and nodejs v12+.
  - Setup with [hpal-debug](https://github.com/hapipal/hpal-debug) hapi CLI debugging tools.
  - Provides conventions for building plugins by mapping the entire hapi plugin API onto files and folders, using [haute-couture](https://github.com/hapipal/haute-couture).
  - Designed to allow you to deploy your plugin on its own or as part of a larger application.

@@ -1,5 +1,5 @@
 # create base image with all packages, proper entrypoint, and directories created
-FROM node:erbium-alpine AS base
+FROM node:14-alpine AS base
 
 # install any packages we need from apt here
 RUN apk add --update dumb-init
