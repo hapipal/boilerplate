@@ -1,6 +1,6 @@
 {
   "name": "hapipal-boilerplate",
-  "version": "2.4.1",
+  "version": "2.5.0",
   "main": "lib/index.js",
   "scripts": {
     "start": "node server",
