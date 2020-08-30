@@ -1,6 +1,6 @@
 {
   "name": "hapipal-boilerplate",
-  "version": "2.4.1",
+  "version": "2.5.1",
   "main": "lib/index.js",
   "scripts": {
     "start": "node server",
@@ -15,10 +15,10 @@
   "dependencies": {
     "@hapi/boom": "9.x.x",
     "@hapi/inert": "6.x.x",
-    "@hapi/joi": "17.x.x",
     "@hapi/vision": "6.x.x",
     "handlebars": "4.x.x",
-    "haute-couture": "3.x.x"
+    "haute-couture": "3.x.x",
+    "joi": "17.x.x"
   },
   "devDependencies": {
     "@babel/preset-env": "7.x.x",
@@ -26,9 +26,9 @@
     "@hapi/code": "8.x.x",
     "@hapi/eslint-config-hapi": "13.x.x",
     "@hapi/eslint-plugin-hapi": "4.x.x",
-    "@hapi/glue": "7.x.x",
-    "@hapi/hapi": "19.x.x",
-    "@hapi/lab": "22.x.x",
+    "@hapi/glue": "8.x.x",
+    "@hapi/hapi": "20.x.x",
+    "@hapi/lab": "23.x.x",
     "babel-eslint": "10.x.x",
     "babelify": "10.x.x",
     "browser-sync": "2.x.x",
@@ -36,7 +36,7 @@
     "confidence": "4.x.x",
     "cssnano": "4.x.x",
     "dotenv": "8.x.x",
-    "eslint": "6.x.x",
+    "eslint": "7.x.x",
     "hpal": "2.x.x",
     "hpal-debug": "1.x.x",
     "node-sass": "4.x.x",
