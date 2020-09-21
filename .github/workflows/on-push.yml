@@ -1,0 +1,34 @@
+name: api tests
+on: push
+
+jobs:
+  # Label of the container job
+  testing-harness:
+    # Containers must run in Linux based operating systems
+    runs-on: ubuntu-latest
+    # Docker Hub image that `container-job` executes in
+    container: node:14
+
+    steps:
+      # Downloads a copy of the code in your repository before running CI tests
+      - name: Check out repository code
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run api tests
+        run: npm test
+        env:
+          # Essentially, your .env file
+
+          # This workflow file supports contexts and var-replacement syntax.
+          # See which contexts are available in https://docs.github.com/en/actions/reference/context-and-expression-syntax-for-github-actions#contexts
+
+          # More specifically to this example, checkout what's on the github context https://docs.github.com/en/actions/reference/context-and-expression-syntax-for-github-actions#github-context
+          # COMMIT_SHA: ${{github.sha}}
+
+          # Add your secrets if you're an admin for the repo in the settings area.
+          # Just name your secrets in CONSTANT_CASE to treat them like
+          # environment var secrets to be passed here!
+          # SECRET_ACCESS_KEY: ${{secrets.SECRET_ACCESS_KEY}}
