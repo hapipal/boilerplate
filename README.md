@@ -175,11 +175,11 @@ Integrates [hapi-swagger](https://github.com/glennjones/hapi-swagger) onto the s
 Integrates [Objection ORM](https://github.com/Vincit/objection.js) into your server and plugin using the hapi plugin [schwifty](https://github.com/hapipal/schwifty).  This is a great way to get started with a SQL-oriented plugin.  Adds a `models/` directory to your plugin where Objection models should be placed, and a `migrations/` directory where your migrations should be placed.  Configured to work with SQLite out of the box.
 
 ##### Using the knex CLI
-We've added an npm script for `knex` so that you can avoid writing the whole path to the knex CLI (`node_modules/.bin/knex`) when running commands.  To use the knex CLI, you may write your commands as `npm run knex -- <knex-command>`.
+The knex CLI is installed locally, and a [knexfile](http://knexjs.org/#knexfile) is added to the root of your project so that the connection info is available to it.  To use the CLI, you may run it using npx.
 
-For example, to create a new migration,
+For example, to create a new migration:
 ```
-npm run knex -- migrate:make my-first-migration
+npx knex migrate:make my-first-migration
 ```
 
 #### Deployment
@@ -202,18 +202,18 @@ This flavor additionally incorporates [browserify](https://github.com/substack/n
 ### Versioning
 > Note: most of the time you'll be pulling in flavors at the time you install the pal boilerplate, in which case you don't need to worry much about flavor versioning.
 
-It's worth noting that over time these flavor tags may point to different commits.  The flavors are updated to keep-up with the latest pal boilerplate.  For this reason, as flavor tags move, we leave static versioned tags for your convenience.  Tags are named as such,
+It's worth noting that over time these flavor tags may point to different commits.  The flavors are updated to keep-up with the latest pal boilerplate.  For this reason, as flavor tags move, we leave static versioned tags for your convenience.  Tags are named as such:
 ```
 <flavor-name>-v<major>.<minor>.<patch>
 ```
-where,
+where:
 
  - `<flavor-name>` - the name of this flavor.  Identical to the unversioned tag for this flavor.
  - `<major>` - the major version of the flavor, identical to the major version of the pal boilerplate that it is compatible with.
  - `<minor>` - the minor version of the flavor, bumped when a feature is added to the flavor (rare), but more typically when its dependencies are updated.
  - `<patch>` - the patch version of the flavor, bumped when a bug is fixed in the flavor, or the flavor requires update to account for bugs in the version of the pal boilerplate with which it is compatible.
 
-For example the first version of the "custom swagger" flavor is,
+For example the first version of the "custom swagger" flavor is:
 ```
 custom-swagger-v1.0.0
 ```
