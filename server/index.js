@@ -1,6 +1,7 @@
 'use strict';
 
 const Glue = require('@hapi/glue');
+const Exiting = require('exiting');
 const Manifest = require('./manifest');
 
 exports.deployment = async ({ start } = {}) => {
@@ -8,12 +9,13 @@ exports.deployment = async ({ start } = {}) => {
     const manifest = Manifest.get('/', process.env);
     const server = await Glue.compose(manifest, { relativeTo: __dirname });
 
-    await server.initialize();
-
     if (start) {
-        await server.start();
+        await Exiting.createManager(server).start();
         server.log(['start'], `Server started at ${server.info.uri}`);
+        return server;
     }
+
+    await server.initialize();
 
     return server;
 };
