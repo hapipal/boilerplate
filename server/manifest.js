@@ -34,6 +34,9 @@ module.exports = new Confidence.Store({
                 options: {}
             },
             {
+                plugin: './plugins/swagger'
+            },
+            {
                 plugin: {
                     $filter: 'NODE_ENV',
                     $default: '@hapipal/hpal-debug',
