@@ -1,21 +1,21 @@
 'use strict';
 
-const Confidence = require('confidence');
-const Toys = require('toys');
+const Confidence = require('@hapipal/confidence');
+const Toys = require('@hapipal/toys');
 
 // Glue manifest as a confidence store
 module.exports = new Confidence.Store({
     server: {
         host: '0.0.0.0',
         port: {
-            $env: 'PORT',
+            $param: 'PORT',
             $coerce: 'number',
             $default: 3000
         },
         debug: {
-            $filter: { $env: 'NODE_ENV' },
+            $filter: 'NODE_ENV',
             $default: {
-                log: ['error'],
+                log: ['error', 'start'],
                 request: ['error']
             },
             production: {
@@ -31,8 +31,8 @@ module.exports = new Confidence.Store({
             },
             {
                 plugin: {
-                    $filter: { $env: 'NODE_ENV' },
-                    $default: 'hpal-debug',
+                    $filter: 'NODE_ENV',
+                    $default: '@hapipal/hpal-debug',
                     production: Toys.noop
                 }
             }
