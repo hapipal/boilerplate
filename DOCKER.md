@@ -10,7 +10,7 @@ to create different Docker images depending on the environment the images will
 be running in, while ensuring best practices are followed to keep image size low
 and create a security sandbox if you are running a server.
 
-We are using Docker Compose to define `web` and `test` services. The `web` wervice uses
+We are using Docker Compose to define `web` and `test` services. The `web` service uses
 the `release` Dockerfile stage, and the `test` service uses the `test` Dockerfile stage.
 
 ### `docker-compose.yml` Services
