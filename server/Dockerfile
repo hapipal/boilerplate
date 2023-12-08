@@ -18,7 +18,7 @@ FROM base AS dependencies
 COPY package*.json ./
 RUN npm set progress=false \
     && npm config set depth 0 \
-    && npm i
+    && npm ci
 
 COPY .eslintrc.json .
 COPY ./server ./server
